@@ -38,6 +38,43 @@ body{
     color: #ffffff;
 }
 
+/* Estilos para los botones del nav */
+.nav-btn {
+    border-radius: 10px !important;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los botones de autenticación */
+.auth-buttons {
+    margin-right: 1px !important;
+}
+
+.auth-buttons:last-child {
+    margin-right: 0 !important;
+} 
+
+ /* Estilos para los botones de inicio de sesión y registro */
+ #btniniciar, #btnregistro {
+  margin-left: 5px;
+}
+
+#btniniciar button, #btnregistro button {
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+#btniniciar button:hover, #btnregistro button:hover {
+  background-color: #06aefc;
+  border-color: #06aefc;
+  color: white;
+}
 
 
 /*CAROUSEL*/
@@ -221,7 +258,7 @@ body{
     --bg-color: #f5f5f5;
     --text-color: #333333;
     --nav-bg: #01000a;
-    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(205, 214, 255, 0.548);
     --title-color: #000000;
     --paragraph-color: #333333;
     --btn-bg: transparent;
@@ -427,22 +464,7 @@ body{
     color: var(--paragraph-color);
   }
 
-  /* Estilos para los botones de inicio de sesión y registro */
-  #btniniciar, #btnregistro {
-    margin-left: 1rem;
-  }
-
-  #btniniciar button, #btnregistro button {
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-  }
-
-  #btniniciar button:hover, #btnregistro button:hover {
-    background-color: #06aefc;
-    border-color: #06aefc;
-    color: white;
-  }
+ 
 
   /* Estilos para el dropdown de módulos */
   .dropdown-menu {

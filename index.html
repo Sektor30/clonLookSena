@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="blog-popup.css">
 
 
 
@@ -34,7 +35,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto d-flex  gap-1">
             <li id="btnmodulos" class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Módulos
@@ -60,14 +61,14 @@
                     <i class="fa-solid fa-sun"></i>
                 </button>
             </li>
-            <li class="nav-item">
+            <li class="nav-item auth-buttons">
                 <a class="nav-link" id="btniniciar" href="./vistas/inicio-sesion.html">
-                    <button class="btn btn-outline-light">Inicio Sesión</button>
+                    <button class="btn btn-outline-light nav-btn">Inicio Sesión</button>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item auth-buttons">
                 <a class="nav-link" id="btnregistro" href="./vistas/registro.html">
-                    <button class="btn btn-outline-light">Registro</button>
+                    <button class="btn btn-outline-light nav-btn">Registro</button>
                 </a>
             </li>
             <li class="nav-item">
@@ -154,10 +155,10 @@
     </button>
 
     <div class="carousel-caption col-sm-12 col-sm-6 col-md-8 col-lg-6 m-auto d-none d-md-block rounded-5 p-2">
-      <h1 style="font-weight:bold;">Comienza tu aventura</h1>
-      <p>Somos Chooj, una plataforma de aprendisaje sobre cine y animacion, acompañanos en esta aventura donde aprenderas lo basico sobre la elaboracion y finalizacion de un filme profesional.</p>
+      <h1 style="font-weight:bold;">Comienza el curso</h1>
+      <p>Somos Look, una plataforma de aprendizaje sobre cine y animacion, acompañanos en esta aventura donde aprenderas lo básico sobre la elaboración y finalización de un filme profesional.</p>
       <a class="nav-link" href="./vistas/inicio-sesion.html">
-        <button class="cta btn btn-info text-light fs-3">Comienza tu aventura</button>
+        <button class="cta btn btn-info text-light fs-3">Comienza </button>
       </a>
     </div>
   </div>
@@ -469,8 +470,16 @@
   </footer>
 
    <!-- Botón de WhatsApp y Chat -->
-   <div class="whatsapp-button">
+   <!-- <div class="whatsapp-button">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</div> -->
+
+<!-- Ventana emergente del blog -->
+<div class="blog-popup">
+    <a href="./vistas/noticias.html" class="blog-button" >
+        <i class="fa-solid fa-newspaper"></i>
+        Visita el Blog
+    </a>
 </div>
 
 <div class="chat-box">
@@ -504,6 +513,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script src="blog-popup.js"></script>
 
     
 
