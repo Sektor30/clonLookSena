@@ -49,3 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
         barra.style.width = porcentaje + '%';
         barra.setAttribute('aria-valuenow', porcentaje.toFixed(0));
       });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnModuloGuiones = document.getElementById('btnModuloGuiones');
+    const videoContainer = document.querySelector('.video-yt');
+    
+    if (btnModuloGuiones && videoContainer) {
+        btnModuloGuiones.addEventListener('click', function() {
+            videoContainer.classList.toggle('full-width');
+        });
+    }
+});
