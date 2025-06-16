@@ -30,6 +30,11 @@
       .dropdown-toggle{
         color: #06aefc;
       }
+
+      .video-yt{
+      
+        width: 100%;
+      }
     </style>
 
 
@@ -180,12 +185,37 @@
 
   <main class="bg-dark">
 
-   
+    <!-- Barra de navegación secundaria -->
+    <div class="container-fluid bg-primary py-2 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-start">
+            <div class="btn-group" role="group" aria-label="Navegación secundaria">
+              <button type="button" class="btn btn-outline-light">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button type="button" class="btn btn-outline-light">
+                <i class="fas fa-th-large"></i>
+              </button>
+              <button type="button" class="btn btn-outline-light">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Sección de Introducción -->
-    <div class="ingresovideos  text-center py-1 ">
-      <h1 class="fw-bold text-body-dark">GUIONES</h1>
-      <p class="lead">Recorrido por las principales tendencias y exponentes del cine </p>
+    
+    <!-- Video principal -->
+    <div class="container-fluid px-0">
+      <div class="video-yt">
+        <video id="miVideo" width="100%" controls>
+          <source src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
+            type="video/mp4" />
+          Tu navegador no soporta video HTML5.
+        </video>
+      </div>
     </div>
 
     <!-- Botones de navegación -->
@@ -202,6 +232,12 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Sección de Introducción -->
+  <div class="ingresovideos  text-center py-1 ">
+    <h1 class="fw-bold text-body-dark">GUIONES</h1>
+    <p class="lead">Recorrido por las principales tendencias y exponentes del cine </p>
   </div>
 
 
@@ -265,25 +301,6 @@
 
 
                         <!-- video bar avance -------------------------------------------------------------->                        
-                        <div class="video-yt">
-                          <!-- Video -->
-                          <video id="miVideo" width="100%" controls>
-                            <source src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
-                              type="video/mp4" />
-                            Tu navegador no soporta video HTML5.
-                          </video>
-                        </div>
-
-                        <!-- <div class="video-yt">
-                <div class="col-12 text-light justify-content-center m-auto border " >
-                  <iframe class="col-12 m-auto justify-content-center  " height="700px" src="https://www.youtube.com/embed/UFz_qyMOwsA" title="This is How You Practice Cinematography (All By Yourself)" 
-                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                   gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-          </div>
-              </div> -->
-                        
-                        
                         <div class="contenedor text-center   ">
                           <div class="info-video mt-5">
                             <p> DESCUBRE: ¿Cómo comenzar en la produccion cinematografica?</p>
