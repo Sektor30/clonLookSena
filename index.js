@@ -137,162 +137,77 @@ document.addEventListener("DOMContentLoaded", function () {
     btnRegistro.style.display = "block";
     btnIniciarSesion.style.display = "block";
   });
-  
-// Funcionalidad del botón de WhatsApp
-document.addEventListener("DOMContentLoaded", function() {
-    // Selección de elementos
-    const whatsappButton = document.querySelector('.whatsapp-button');
-    const chatBox = document.querySelector('.chat-box');
-    const closeChat = document.querySelector('.close-chat');
-    const sendMessage = document.querySelector('.send-message');
-    const messageInput = document.querySelector('.message-input');
-    const chatMessages = document.querySelector('.chat-messages');
 
-    // Verificar que los elementos existan
-    if (!whatsappButton || !chatBox || !closeChat || !sendMessage || !messageInput || !chatMessages) {
-        console.error('No se encontraron todos los elementos necesarios para el chat');
-        return;
-    }
 
-    // Configuración de WhatsApp
-    const whatsappGroupLink = 'https://chat.whatsapp.com/CHT7nmUnqlpE4HaxG5xxuR';
-
-    // Mensaje de bienvenida
-    const welcomeMessage = {
-        text: "¡Hola! 👋 Bienvenido a Chooj. Únete a nuestro grupo de WhatsApp para más información.",
-        isUser: false
-    };
-
-    // Mostrar mensaje en el chat
-    function addMessage(message) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('message');
-        if (message.isUser) {
-            messageElement.classList.add('user-message');
-        }
-        messageElement.textContent = message.text;
-        chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    // Función para mostrar el chat
-    function showChat() {
-        chatBox.classList.add('active');
-        if (chatMessages.children.length === 0) {
-            addMessage(welcomeMessage);
-            // Agregar mensaje con el enlace del grupo
-            setTimeout(() => {
-                addMessage({
-                    text: "Haz clic en el botón de enviar para unirte a nuestro grupo de WhatsApp",
-                    isUser: false
-                });
-            }, 1000);
-        }
-    }
-
-    // Función para ocultar el chat
-    function hideChat() {
-        chatBox.classList.remove('active');
-    }
-
-    // Función para redirigir al grupo de WhatsApp
-    function redirectToWhatsAppGroup() {
-        try {
-            window.open(whatsappGroupLink, '_blank');
-            addMessage({
-                text: "¡Te estamos redirigiendo al grupo de WhatsApp!",
-                isUser: false
-            });
-        } catch (error) {
-            console.error('Error al redirigir al grupo:', error);
-            addMessage({
-                text: "Lo siento, hubo un error al intentar unirte al grupo. Por favor, intenta de nuevo.",
-                isUser: false
-            });
-        }
-    }
-
-    // Event Listeners
-    whatsappButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        console.log('Botón de WhatsApp clickeado');
-        showChat();
-    });
-
-    closeChat.addEventListener('click', function(e) {
-        e.preventDefault();
-        hideChat();
-    });
-
-    // Enviar mensaje
-    sendMessage.addEventListener('click', function(e) {
-        e.preventDefault();
-        redirectToWhatsAppGroup();
-    });
-
-    // Enviar mensaje con Enter
-    messageInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            sendMessage.click();
-        }
-    });
-
-    // Cerrar chat al hacer clic fuera
-    document.addEventListener('click', function(e) {
-        if (!chatBox.contains(e.target) && !whatsappButton.contains(e.target) && chatBox.classList.contains('active')) {
-            hideChat();
-        }
-    });
-});
 
 /* video corousel */
 
-
 document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.getElementById('mainCarousel');
-  const video = document.querySelector('#video2');
-  
-  // Asegurarse de que el video se reproduzca
-  function playVideo() {
-    video.play().catch(function(error) {
-      console.log("Error reproduciendo el video:", error);
-      // Intentar reproducir nuevamente después de un error
-      setTimeout(playVideo, 1000);
+    const carousel = document.getElementById('mainCarousel');
+    const video = document.querySelector('#video2');
+    const carouselInstance = new bootstrap.Carousel(carousel, {
+        interval: 8000, // Cambia cada 8 segundos
+        wrap: true,     // Vuelve al inicio después del último slide
+        keyboard: true  // Permite navegación con teclado
     });
-  }
+   
+    // Asegurarse de que el video se reproduzca
+    function playVideo() {
+        video.play().catch(function(error) {
+            console.log("Error reproduciendo el video:", error);
+            // Intentar reproducir nuevamente después de un error
+            setTimeout(playVideo, 1000);
+        });
+    }
 
-  // Intentar reproducir el video cuando esté listo
-  video.addEventListener('loadeddata', function() {
-    playVideo();
-  });
-
-  // Intentar reproducir el video cuando sea visible
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+    // Intentar reproducir el video cuando esté listo
+    video.addEventListener('loadeddata', function() {
         playVideo();
-      } else {
-        video.pause();
-      }
     });
-  }, { threshold: 0.5 });
 
-  observer.observe(video);
+    // Intentar reproducir el video cuando sea visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                playVideo();
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 });
 
-  // Reproducir el video cuando el usuario interactúe con la página
-  document.addEventListener('click', function() {
-    playVideo();
-  });
+    observer.observe(video);
 
-  // Manejar la reproducción cuando el video termine
-  video.addEventListener('ended', function() {
-    video.currentTime = 0;
-    playVideo();
-  });
+    // Reproducir el video cuando el usuario interactúe con la página
+    document.addEventListener('click', function() {
+        playVideo();
+    });
+
+    // Cuando el video termine, avanzar al siguiente slide
+    video.addEventListener('ended', function() {
+        carouselInstance.next();
+    });
+
+    // Actualizar indicadores activos
+    carousel.addEventListener('slide.bs.carousel', function (e) {
+        const indicators = document.querySelectorAll('.carousel-indicators button');
+        indicators.forEach((indicator, index) => {
+            if (index === e.to) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    });
+
+    // Manejar clics en los indicadores
+    const indicators = document.querySelectorAll('.carousel-indicators button');
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            carouselInstance.to(index);
+        });
+    });
 });
-
-
 
 /* MODAL CAROUSEL  */
 function navegarModal(modalActual, modalSiguiente) {

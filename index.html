@@ -59,6 +59,7 @@
             <li class="nav-item">
                 <button id="themeToggle" class="btn btn-outline-light">
                     <i class="fa-solid fa-sun"></i>
+                    
                 </button>
             </li>
             <li class="nav-item auth-buttons">
@@ -113,7 +114,6 @@
   <!-- carrusel -->
   <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
     <div class="carousel-inner">
-
       <div class="carousel-item">
         <video class="d-block w-100" muted loop id="video2" playsinline>
           <source src="https://cdn.pixabay.com/video/2016/02/12/2127-155244168_large.mp4" type="video/mp4">
@@ -121,7 +121,7 @@
         </video>
       </div>
       
-      <div class="carousel-item active">
+      <div class="carousel-item ">
         <img src="./assets/logo prime.png" alt="baner img" />
       </div>
       <div class="carousel-item">
@@ -137,13 +137,21 @@
         <img src="./assets/produccion-2.jpg" alt="baner img" />
       </div>
 
-
       <div class="carousel-item active">
         <video class="d-block w-100" muted loop id="video2" playsinline autoplay>
           <source src="https://cdn.pixabay.com/video/2019/06/17/24497-344562750_large.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
       </div>
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -210,7 +218,7 @@
   </div>
   
   
-  <h2 class="text-center text-light">MÓDULOS</h2>
+  <h2 class="text-center ">MÓDULOS</h2>
   <div class="container pb-5">
     <div class="row">
       <div class="col-md-3">
@@ -414,8 +422,8 @@
       <div class="row text-white">
         <div class="col-md-4">
           <div class="footer-section">
-            <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#contactoCollapse" role="button" aria-expanded="false">
-              CONTACTO
+            <div class="footer-header  bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#contactoCollapse" role="button" aria-expanded="false">
+               <span class="w-100">CONTACTO </span> 
               <i class="fa-solid fa-chevron-down"></i>
             </div>
             <ul class="footer-links">
@@ -431,7 +439,7 @@
         <div class="col-md-4">
           <div class="footer-section">
             <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#nosotrosCollapse" role="button" aria-expanded="false">
-              SOBRE NOSOTROS
+               <span class="w-100">  SOBRE NOSOTROS</span> 
               <i class="fa-solid fa-chevron-down"></i>
             </div>
             <ul class="footer-links">
@@ -446,8 +454,7 @@
         <div class="col-md-4">
           <div class="footer-section">
             <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#terminosCollapse" role="button" aria-expanded="false">
-              TÈRMINOS Y CONDICIONES
-              <i class="fa-solid fa-chevron-down"></i>
+              <span class="w-100"> TÉRMINOS Y CONDICIONES</span>              <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="social-icons mt-3">
               <a href="#" class="text-white me-3">
