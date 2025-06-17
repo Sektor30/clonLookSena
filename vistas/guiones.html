@@ -199,55 +199,65 @@
 
   <main class="bg-dark">
 
-    <!-- Barra de navegación secundaria -->
-    <div class="container-fluid bg-primary py-2">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="avances col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-lg-start">
-            <div class="btn-group" role="group" aria-label="Navegación secundaria">
-              <button type="button" class="btn btn-outline-light">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-
-              <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
-                aria-controls="offcanvasUser">
-                <button type="button" class="btn btn-outline-light">
-                  <i class="fas fa-th-large"></i>
+    <div class="row">
+      <!-- Video principal: se muestra primero en móviles, pero segundo en md+ -->
+      <div class="col-md-12 order-md-2 ">
+        <!-- Video principal -->
+        <div class="container-fluid px-0 mb-2">
+          <div class="video-yt m-auto">
+            <video id="miVideo" width="100%" controls>
+              <source
+                src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
+                type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Barra de navegación secundaria: se muestra segunda en móviles, pero primero en md+ -->
+      <div class="col-md-12 order-md-1 ">
+        <!-- Barra de navegación secundaria -->
+        <div class="container-fluid bg-primary py-2">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="avances col-12 col-md-4 mb-2 mb-md-0 d-flex justify-content-center justify-content-lg-start">
+                <div class="btn-group" role="group" aria-label="Navegación secundaria">
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+    
+                  <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+                    aria-controls="offcanvasUser">
+                    <button type="button" class="btn btn-outline-light">
+                      <i class="fas fa-th-large"></i>
+                    </button>
+                  </a>
+    
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+    
+              <div class="col-12 col-md-4 text-center mb-2 mb-md-0">
+                <h2 class="text-light m-0">Módulo: Guiones</h2>
+              </div>
+    
+              <div class="col-12 col-md-4 text-center text-md-end">
+                <button type="button" class="btn btn-outline-light" id="btnModuloGuiones">
+                  <i class="fas fa-expand"></i>
                 </button>
-              </a>
-              
-              <button type="button" class="btn btn-outline-light">
-                <i class="fas fa-chevron-right"></i>
-              </button>
+              </div>
             </div>
-          </div>
-
-          <div class="col-12 col-md-4 text-center mb-2 mb-md-0">
-            <h2 class="text-light m-0">Módulo: Guiones</h2>
-          </div>
-
-          <div class="col-12 col-md-4 text-center text-md-end">
-            <button type="button" class="btn btn-outline-light" id="btnModuloGuiones">
-              <i class="fas fa-expand"></i>
-            </button>
           </div>
         </div>
       </div>
     </div>
+    
+    
 
-
-    <!-- Video principal -->
-    <div class="container-fluid  px-0 mb-2">
-      <div class="video-yt m-auto">
-        <video id="miVideo" width="100%" controls>
-          <source
-            src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
-            type="video/mp4" />
-          Tu navegador no soporta video HTML5.
-        </video>
-      </div>
-    </div>
-
+    
 
 
     <!-- espacio de informacion -->
