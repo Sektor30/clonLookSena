@@ -20,25 +20,28 @@
     integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-      .nav-link{
-        color: #ffffff;
-      }
-      .nav-link:hover{
-        color: #06aefc;
-      }
-      .dropdown-toggle{
-        color: #06aefc;
-      }
+  <style>
+    .nav-link {
+      color: #ffffff;
+    }
 
-      .video-yt{
-        width: 80%;
-        transition: width 0.3s ease;
-      }
-      .video-yt.full-width {
-        width: 100%;
-      }
-    </style>
+    .nav-link:hover {
+      color: #06aefc;
+    }
+
+    .dropdown-toggle {
+      color: #06aefc;
+    }
+
+    .video-yt {
+      width: 75%;
+      transition: width 0.3s ease;
+    }
+
+    .video-yt.full-width {
+      width: 100%;
+    }
+  </style>
 
 
 </head>
@@ -47,81 +50,86 @@
 
   <nav class="navbar navbar-expand-lg  px-4  ">
     <a class="navbar-brand" href="./dashboard.html">
-        <img src="../assets/logolook2.png" width="200px" alt="logo-chooj"/>
+      <img src="../assets/logolook2.png" width="200px" alt="logo-chooj" />
     </a>
-    <button class="navbar-toggler" style="color: rgba(245, 222, 179, 0);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fa-solid fa-bars fs-2 text-info"></i></span>
+    <button class="navbar-toggler" style="color: rgba(245, 222, 179, 0);" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fa-solid fa-bars fs-2 text-info"></i></span>
     </button>
 
-    <div class="collapse navbar-collapse text-center " id="navbarNav" >
-        <ul class="navbar-nav  ms-auto p-0 fs-5">
+    <div class="collapse navbar-collapse text-center " id="navbarNav">
+      <ul class="navbar-nav  ms-auto p-0 fs-5">
 
-          <li id="btnmodulos" class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Modulos
-            </a>
-            <ul class="dropdown-menu  ">
-              <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
-              <li><a class="dropdown-item" href="../vistas/guiones.html">Guiones</a></li>
-              <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
-              <li><a class="dropdown-item" href="../vistas/edicion.html">Edición</a></li>
-            </ul>
-          </li>
+        <li id="btnmodulos" class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Modulos
+          </a>
+          <ul class="dropdown-menu  ">
+            <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
+            <li><a class="dropdown-item" href="../vistas/guiones.html">Guiones</a></li>
+            <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
+            <li><a class="dropdown-item" href="../vistas/edicion.html">Edición</a></li>
+          </ul>
+        </li>
 
-          <li class="nav-item ">
-            <a class="nav-link " href="../vistas/quienes-somos.html">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Certificación</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../vistas/noticias.html">Blog</a>
-          </li>
-          <li class="nav-item">
-            <!-- Botón para abrir el offcanvas -->
-            <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">
-              <i id="ico" class="fa-regular fa-circle-user fs-1 m-0 px-3"></i>
-            </a>
-          </li>
-        </ul>
+        <li class="nav-item ">
+          <a class="nav-link " href="../vistas/quienes-somos.html">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Certificación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../vistas/noticias.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <!-- Botón para abrir el offcanvas -->
+          <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+            aria-controls="offcanvasUser">
+            <i id="ico" class="fa-regular fa-circle-user fs-1 m-0 px-3"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
- 
-<!-- Offcanvas (sidebar para la info del usuario) -->
-<div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
-  <div class="offcanvas-header">
+
+  <!-- Offcanvas (sidebar para la info del usuario) -->
+  <div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
+    <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasUserLabel">Información del Usuario</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body ">
-      <p><strong>Nombre:</strong> <p id="NombreUser"></p></p>
+    </div>
+    <div class="offcanvas-body ">
+      <p><strong>Nombre:</strong>
+      <p id="NombreUser"></p>
+      </p>
       <p><strong>Email:</strong> usuario@example.com</p>
       <hr>
-      
+
       <a href="../vistas/dashboard.html" class="btn btn-primary w-100 mb-2">Dashboard</a>
       <a href="./cerrando.html" class="btn btn-outline-danger w-100">Cerrar sesión</a>
 
       <div class="mod">
-      <div class="nav-item dropdown py-4">
-          <a class="nav-link  text-center text-dark border-bottom border-dark " >
+        <div class="nav-item dropdown py-4">
+          <a class="nav-link  text-center text-dark border-bottom border-dark ">
             Módulos
           </a>
-         
 
-          <div class="col-md-12 col-lg-12 my-3">
+
+          <div class="col-md-12 col-lg-12 my-3 ">
             <div class="card h-100">
               <!-- <img src="ruta-de-tu-imagen.jpg" class="card-img-top" alt="Imagen del módulo"> -->
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">MÓDULO:ESTILOS</h5>
                 <p class="card-text">Breve descripción del contenido del módulo o tema que se cubrirá.</p>
-                
+
                 <!-- Barra de progreso -->
                 <div class="progress mb-3">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100">75%</div>
                 </div>
-          
+
                 <a href="./estilos.html" class="btn btn-outline-primary mt-auto">Ver módulo</a>
-                
+
               </div>
             </div>
           </div>
@@ -132,14 +140,15 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">MÓDULO:GUIONES</h5>
                 <p class="card-text">Breve descripción del contenido del módulo o tema que se cubrirá.</p>
-                
+
                 <!-- Barra de progreso -->
                 <div class="progress mb-3">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 20%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 20%;" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">25%</div>
                 </div>
-          
+
                 <a href="./guiones.html" class="btn btn-outline-primary mt-auto">Ver módulo</a>
-                
+
               </div>
             </div>
           </div>
@@ -150,14 +159,15 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">MÓDULO:PRODUCCIÓN</h5>
                 <p class="card-text">Breve descripción del contenido del módulo o tema que se cubrirá.</p>
-                
+
                 <!-- Barra de progreso -->
                 <div class="progress mb-3">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="5"
+                    aria-valuemin="0" aria-valuemax="100">5%</div>
                 </div>
-          
+
                 <a href="./produccion.html" class="btn btn-outline-primary mt-auto">Ver módulo</a>
-                
+
               </div>
             </div>
           </div>
@@ -168,23 +178,24 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">MÓDULO:EDICIÓN</h5>
                 <p class="card-text">Breve descripción del contenido del módulo o tema que se cubrirá.</p>
-                
+
                 <!-- Barra de progreso -->
                 <div class="progress mb-3">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 5%;" aria-valuenow="5"
+                    aria-valuemin="0" aria-valuemax="100">5%</div>
                 </div>
-          
+
                 <a href="./edicion.html" class="btn btn-outline-primary mt-auto">Ver módulo</a>
-                
+
               </div>
             </div>
           </div>
 
-        </div> 
+        </div>
       </div>
+    </div>
+
   </div>
-  
-</div>
 
   <main class="bg-dark">
 
@@ -212,12 +223,13 @@
       </div>
     </div>
 
-    
+
     <!-- Video principal -->
-    <div class="container-fluid px-0">
-      <div class="video-yt">
+    <div class="container-fluid  px-0 mb-2">
+      <div class="video-yt m-auto">
         <video id="miVideo" width="100%" controls>
-          <source src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
+          <source
+            src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
             type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
@@ -225,13 +237,159 @@
     </div>
 
 
-  
 
+    <!-- espacio de informacion -->
+
+    <div class=" info-student col-lg-9 col-md-12 col-sm-12 column-gap-3 m-auto px-2 rounded-3    ">
+      <ul class="  col-lg-12   list-group  gap-1 bg-dark-subtle p-2  ">
+
+        <!-- primer panel de informacion -->
+        <li class="list-group-item">
+          <p class="d-inline-flex gap-1  w-100">
+            <a class="text-decoration-none text-center fs-4 text-dark pt-2 w-100 " data-bs-toggle="collapse"
+              href="#multiCollapseExample4" role="button" aria-expanded="true" aria-controls="multiCollapseExample4"><i
+                class="fas fa-chevron-down "></i></a>
+
+          </p>
+          <div class="row  ">
+            <div class="col">
+              <div class="collapse multi-collapse show " id="multiCollapseExample4">
+                <!-- START  -->
+                <div class="container ">
+
+                  <!-- Sección de Introducción -->
+                  <div class="ingresovideos  text-center py-1 ">
+                    <h1 class="fw-bold text-body-dark">GUIONES</h1>
+                    <p class="lead">Recorrido por las principales tendencias y exponentes del cine </p>
+                  </div>
+
+                  <div class="contenedor text-center   ">
+                    <div class="info-video ">
+                      <p> DESCUBRE: ¿Cómo comenzar en la produccion cinematografica?</p>
+                      <p>Nuestro segundo nivel, comienza en compañía de nuestros héroes.</p>
+
+                    </div>
+
+                    <div class="container col-8 my-2 mb-5">
+                      <!-- Barra de progreso -->
+                      <div class="progress border border-dark ">
+                        <div id="barraProgreso" class="progress-bar" role="progressbar" style="width: 0%"
+                          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Botones de navegación -->
+                  <div class="container mb-4">
+                    <div class="row justify-content-center g-2">
+                      <div class="col-lg-4 col-sm-12 col-md-4">
+                        <a href="#" class="btn btn-dark  bg-dark border w-100">Anterior Módulo</a>
+                      </div>
+                      <div class="col-lg-4 col-sm-12 col-md-4">
+                        <a href="./dashboard.html" class="btn btn-dark border w-100">Dashboard</a>
+                      </div>
+                      <div class="col-lg-4 col-sm-12 col-md-4">
+                        <a href="#" class="btn btn-dark bg-dark border w-100">Siguiente Módulo</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- END -->
+              </div>
+            </div>
+          </div>
+
+
+        </li>
+
+
+
+        <!-- collapse estudiantes -->
+        <li class="list-group-item rounded-3">
+          <p class="d-inline-flex gap-1 w-100">
+            <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample1"
+              role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Video: Introducción al Guion
+              Cinematográfico</a>
+
+          </p>
+          <div class="row ">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+
+                <div class="col-md-12 col-sm-12 m-auto  ">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      Video: Introducción al Guion Cinematográfico
+                    </h5>
+                    <p class="card-text">
+                      lead-in to additional content. This content is a little
+                      bit longer
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </p>
+
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+        </li>
+
+
+        <!-- collapse instructores -->
+        <li class="list-group-item rounded-3">
+
+          <p class="d-inline-flex gap-1 w-100">
+            <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample2"
+              role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Explora</a>
+
+          </p>
+          <div class="row  ">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="info-video  col-10   ">
+                  <p> EXPLORA</p>
+                  <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
+                  <p>Aquí obtendrás recursos de descarga para complementar nuestro curso </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </li>
+
+        <li class="list-group-item">
+          <p class="d-inline-flex gap-1 w-100">
+            <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample6"
+              role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Recursos </a>
+
+          </p>
+          <div class="row  ">
+            <div class="col ">
+              <div class="collapse multi-collapse" id="multiCollapseExample6">
+                <div class="info-video col-10 ">
+                  <p>REVIVE</p>
+                  <p>Esta es tu gran reto, descifra con nosotros los diferentes momentos que le dan sentido a la
+                    historia de la animación.</p>
+                  <p>Desarrolla nuestro test, en pocos minutos encuentra preguntas que te serviran para seguir
+                    adelante</p>
+                </div>
+              </div>
+        </li>
+      </ul>
+    </div>
 
     <!-- <div class="container col-8
      mt-5 "> -->
-      <!-- Barra de progreso -->
-      <!-- <div class="info-avance row container  ">
+    <!-- Barra de progreso -->
+    <!-- <div class="info-avance row container  ">
         <p class="texto-informacion col  text-light" style="font-style: italic; "> Alcanza tu meta</p>
         <i class="fa-solid fa-flag col fs-4 text-warning  text-end"></i>
       </div>
@@ -248,9 +406,9 @@
 
 
     <div class="container col-8
-     mt-5 ">
-     <!-- Barra de progreso -->
-     <!-- <div class="progress mt-3">
+     mt-5   ">
+      <!-- Barra de progreso -->
+      <!-- <div class="progress mt-3">
       <div
         id="barraProgreso"
         class="progress-bar"
@@ -261,7 +419,7 @@
         aria-valuemax="100"
       ></div>
     </div> -->
-  </div>
+    </div>
 
 
     <section class="newModel pb-4 py-1">
@@ -275,299 +433,17 @@
 
           </div>
 
-          <div class="container col-lg-12 ">
 
-            <div class="accordion container p-0 col-lg-12 col-md-12 col-sm-12 " id="accordionPanelsStayOpenExample">
-              <div class="accordion-item text-light flex-wrap">
-                <div class="nuevocontent">
-                  <h2 class="accordion-header col-12" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button d-flex flex-wrap" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                      aria-controls="panelsStayOpen-collapseOne">
-                      <div class="otroContent col-12 my-2 ">
-
-
-                        <!-- video bar avance -------------------------------------------------------------->                        
-                        <div class="contenedor text-center   ">
-                          <div class="info-video mt-5">
-                            <p> DESCUBRE: ¿Cómo comenzar en la produccion cinematografica?</p>
-                            <p>Nuestro segundo nivel, comienza en compañía de nuestros héroes.</p>
-                            
-                          </div>
-  
-                          <div class="container col-8
-       mt-5 ">
-        <!-- Barra de progreso -->
-        <div class="progress  ">
-          <div id="barraProgreso" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"
-            aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      </div>
-    </div>
-
-
-                    </button>
-                  </h2>
-                </div>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                  aria-labelledby="panelsStayOpen-headingOne">
-                  <!-- <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div> -->
-
-                  <!-- card 1 -------------------------------------------------------------------------------------------->
-
-                  <div class="card mb-3 px-1 col-lg col-md-12 col-sm-12">
-                    <div class="row g-0">
-                      <div class="infoavance d-flex">
-                        <!-- start progress bar -->
-                        <div class="col-8 justify-content-center m-auto pt-4 align-item-center">
-                          <!-- <div class="progress d-flex col justify-content-start my-1">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%"
-                              aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                              20%
-                            </div>
-                          </div> -->
-                        </div>
-                        <!-- end progress bar -->
-
-                        <!-- checkbox-start -->
-                        <!-- <div class="form-check mx-1 pt-4  justify-content-center col-2">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                          <label class="form-check-label text-ends" for="flexCheckDefault">
-                            End
-                          </label>
-
-                        </div> -->
-
-                        <!-- checkbox-end-->
-
-                      </div>
-                      <div class="col-md-10 col-sm-12 m-auto py-4   ">
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            Video: Introducción al Guion Cinematográfico
-                          </h5>
-                          <p class="card-text">
-                            lead-in to additional content. This content is a little
-                            bit longer
-                          </p>
-                          <p class="card-text">
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
-                          </p>
-
-                          <!-- Button trigger modal ------------------------------------------------------------------------------------------------------------------------>
-                          <!--  <button
-              type="button"
-              class="btn btn-primary   mx-2 mb-2   "
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              Launch static backdrop modal
-            </button> -->
-
-
-                        </div>
-                      </div>
-                    </div>
-
-
-
-                    <!-- Modal -->
-                    <div class="modal fade modal-sm" id="staticBackdrop" data-bs-backdrop="static"
-                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                              Modal title
-                            </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-
-
-                          <div class="modal-body">
-                            ...
-
-                          </div>
-                          <div class="col-12 col-md-12 col-sm-12">
-                            <div>
-                              <iframe class="col-12 col-md-12 col-sm-12" height="700" class="border"
-                                src="https://www.youtube.com/embed/SMmfzHEOjAQ"
-                                title="Animación Artes UdeA #7| Chiwaia Guia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                    gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen></iframe>
-                            </div>
-                            <div class="row text-center">
-                              <div class="col-12 col-sm-12">
-                                <p style="
-                                height: 300px;
-    
-                                width: 80%;
-                                overflow: scroll;
-                                margin: auto;
-                              ">
-
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                              Close
-                            </button>
-                            <button type="button" class="btn btn-primary">
-                              Understood
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- end modal -->
-                  </div>
-
-                  <!-- end card -->
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                    aria-controls="panelsStayOpen-collapseTwo">
-                    <p class="px-3">EXPLORA</p>
-
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingTwo">
-                  <div class="accordion-body">
-                    <div class="info-video px-3 col-10 py-4 m-auto ">
-                      <p> EXPLORA</p>
-                      <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
-                      <p>Aquí obtendrás recursos de descarga para complementar nuestro curso </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item  ">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                    aria-controls="panelsStayOpen-collapseThree">
-                    <p class="px-3"> REVIVE</p>
-
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingThree">
-                  <div class="accordion-body">
-                    <p>
-                    <div class="info-video px-3 col-10 m-auto py-4">
-                      <p>REVIVE</p>
-                      <p>Esta es tu gran reto, descifra con nosotros los diferentes momentos que le dan sentido a la
-                        historia de la animación.</p>
-                      <p>Desarrolla nuestro test, en pocos minutos encuentra preguntas que te serviran para seguir
-                        adelante</p>
-                    </div>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Panel 2 -->
-        <div class="carousel-item ">
-          <div class="container col-lg-8 col-md-10 col-sm-12">
-            <div class="accordion" id="accordionExample2">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    Accordion Item #2
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample2">
-                  <div class="accordion-body">
-                    <p>Contenido del segundo acordeón.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Panel 3 -->
-        <div class="carousel-item">
-          <div class="container col-lg-8 col-md-10 col-sm-12">
-            <div class="accordion" id="accordionExample3">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                    Accordion Item #3
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample3">
-                  <div class="accordion-body">
-                    <p>Contenido del tercer acordeón.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Controles del Carousel -->
-      <!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div> -->
 
     </section>
 
-    
-    <!-- Sección de Introducción -->
-  <div class="ingresovideos  text-center py-1 ">
-    <h1 class="fw-bold text-body-dark">GUIONES</h1>
-    <p class="lead">Recorrido por las principales tendencias y exponentes del cine </p>
-  </div>
 
-    <!-- Botones de navegación -->
-    <div class="container  mt-2">
-      <div class="row justify-content-center g-2">
-        <div class="col-lg-4 col-sm-12 col-md-4">
-          <a href="#" class="btn btn-dark border w-100">Anterior Módulo</a>
-        </div>
-        <div class="col-lg-4 col-sm-12 col-md-4">
-          <a href="./dashboard.html" class="btn btn-dark border w-100">Dashboard</a>
-        </div>
-        <div class="col-lg-4 col-sm-12 col-md-4">
-          <a href="#" class="btn btn-dark border w-100">Siguiente Módulo</a>
-        </div>
-      </div>
+
+
+
     </div>
-  </div>
+
+
 
 
 
@@ -687,7 +563,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-    <script src="../js/guiones.js"></script>
+  <script src="../js/guiones.js"></script>
 
 </body>
 
