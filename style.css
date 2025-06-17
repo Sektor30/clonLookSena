@@ -589,11 +589,13 @@ body{
     .carousel-caption {
       bottom: 60px;
       visibility:collapse;
+      
     }
 
     .cta{
       visibility:visible;
       justify-content: center;
+      
       
     }
 
@@ -601,6 +603,7 @@ body{
      
       visibility: visible;
       width: 100%;
+      
     }
     
     .carousel-caption h1 {
@@ -655,7 +658,7 @@ body{
     
     .carousel-caption {
       padding: 10px;
-      bottom: 60px;
+      bottom: 200px;
     }
 
     .cta{
@@ -681,6 +684,14 @@ body{
   }
 
 
+  @media (max-width: 250px){
+
+  
+    .cta{
+      border: 3px solid green;
+      visibility: hidden;
+    }
+  }
 
 
 
