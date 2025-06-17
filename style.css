@@ -565,20 +565,20 @@ body{
   }
 
 
-  @media (min-width: 768px) and (max-width: 1200px) {
-    /* Estilos CSS aquí se aplicarán solo entre 768px y 1200px */
-    .modulos-desc {
-      border: 2px solid red;
-      
-      display: grid;
-      
+ 
 
-    }
-
-    .modulos-desc .card1 {
-      border: 3px solid green;
-      
-
+    @media (min-width: 768px) and (max-width: 1200px) {
+      .modulos-desc {
+        display: grid;
+        gap: 20px;
+        padding: 20px;
+        
+      }
+    
+      .modulos-desc .card1 {
+        width: 100%;
+        height: 100%;
+      }
     }
 
   @media (max-width: 992px) {
