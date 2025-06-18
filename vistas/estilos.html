@@ -32,16 +32,35 @@
       }
     
 
-    
-      .accordion-header {
-        background-color: transparent !important;
-      }
-      .accordion-button {
-        background-color: transparent !important;
-      }
-      .accordion-button:not(.collapsed) {
-        background-color: transparent !important;
-      }
+    .video-yt {
+      width: 75%;
+      transition: width 0.3s ease;
+    }
+
+    .video-yt.full-width {
+      width: 100%;
+    }
+
+    /* Estilos para la bandera */
+    .bandera {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .bandera i {
+      font-size: 1.5rem;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+
+    .bandera:hover i {
+      color: #28a745;
+    }
     </style>
 
 </head>
@@ -199,173 +218,187 @@
 
 
 
-  <main class="bg-dark">
-
   
-    <!-- Sección de Introducción -->
-    <div class="ingresovideos  text-center py-4 ">
-      <h1 class="fw-bold text-body-dark">ESTILOS</h1>
-      <p class="lead col-sm-8 m-auto">Recorrido por las principales tendencias y exponentes del septimo arte, El cine
-      </p>
+
+    <main class="bg-dark">
+
+
+
+
+      <div class="row">
+        <!-- Video principal: se muestra primero en móviles, pero segundo en md+ -->
+        <div class="col-md-12 order-md-2 ">
+          <!-- Video principal -->
+          <div class="container-fluid px-0 mb-2">
+            <div class="video-yt m-auto">
+              <video id="miVideo" width="100%" controls>
+                <source
+                  src="https://media.istockphoto.com/id/1474014782/video/acting-script-and-screenplay-for-workplace-theater.mp4?s=mp4-640x640-is&k=20&c=XDerH6wix_s_992NJupEHbD6XtW4oDJg4GSTaDiVrXQ="
+                  type="video/mp4" />
+                Tu navegador no soporta video HTML5.
+              </video>
+            </div>
+          </div>
+        </div>
       
-      <!-- Botones de navegación -->
-      <div class="container  mt-2">
-        <div class="row justify-content-center g-2">
-          <div class="col-lg-4 col-sm-12 col-md-4">
-            <a href="#" class="btn btn-dark border w-100">Anterior Módulo</a>
-          </div>
-          <div class="col-lg-4 col-sm-12 col-md-4">
-            <a href="./dashboard.html" class="btn btn-dark border w-100">Dashboard</a>
-          </div>
-          <div class="col-lg-4 col-sm-12 col-md-4">
-            <a href="#" class="btn btn-dark border w-100">Siguiente Módulo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="container col-8 mt-2  "> -->
-    <!-- Barra de progreso -->
-    <!--  <div class="info-avance row container   ">
-        <p class="texto-informacion col  text-light" style="font-style: italic; "> Alcanza tu meta</p>
-        <i class="fa-solid fa-flag col fs-4 text-warning  text-end"></i>
-      </div>
-      <div class="col m-auto">
-      <div class="progress  ">
-
-        <div class="progress-bar bg-success " role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0"
-          aria-valuemax="100">
-          20%
-        </div>
-      </div>
-    </div>
-    </div> -->
-
-    
-
-    <section class="newModel pb-4 py-1 ">
-      <!-- start acordeon model -->
-
-      <div id="carouselExample " class="carousel slide " data-bs-ride="false">
-        <div class="carousel-inner ">
-          <!-- Panel 1 -->
-          <div class="carousel-item active">
-
-
-          </div>
-
-          <div class="container col-lg-12 col-md-11 pb-2 ">
-
-            <div class="accordion container p-0 col-lg-12 col-md-12 col-sm-12 " id="accordionPanelsStayOpenExample">
-              <div class="accordion-item text-light flex-wrap">
-                <div class="nuevocontent">
-                  <h2 class="accordion-header col-12 border border-danger" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button d-flex flex-wrap show" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                      aria-controls="panelsStayOpen-collapseOne">
-                      <div class="otroContent col-12 my-2 ">
-
-
-                        <!-- video bar avance -------------------------------------------------------------->                        
-                        <div class="video-yt">
-                          <!-- Video -->
-                          <video class="border border-info col-lg-12 " id="miVideo" width="100%" controls>
-                            <source src="https://cdn.pixabay.com/video/2022/05/22/117723-713302063_large.mp4"
-                              type="video/mp4" />
-                            Tu navegador no soporta video HTML5.
-                          </video>
-                        </div>
-
-                        <!-- <div class="video-yt ">
-                          <div class="col-12 text-light justify-content-center m-auto border ">
-                            <iframe class="col-12 video-ref m-auto justify-content-center  " height="700px"
-                              src="https://www.youtube.com/embed/UFz_qyMOwsA"
-                              title="This is How You Practice Cinematography (All By Yourself)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                   gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-                              allowfullscreen></iframe>
-
-                          </div>
-                        </div> -->
-
-                        <div class="contenedor text-center   ">
-                        <div class="info-video mt-5">
-                          <p> DESCUBRE: ¿Cómo comenzar en la produccion cinematografica?</p>
-                          <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
-                          
-                        </div>
-
-                        <div class="container col-8
-     mt-5 ">
-      <!-- Barra de progreso -->
-      <div class="progress ">
-        <div id="barraProgreso" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"
-          aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-                    </button>
-                  </h2>
+        <!-- Barra de navegación secundaria: se muestra segunda en móviles, pero primero en md+ -->
+        <div class="col-md-12 order-md-1 ">
+          <!-- Barra de navegación secundaria -->
+          <div class="container-fluid bg-primary py-2">
+            <div class="container">
+              <div class="row  align-items-center">
+  
+                <!-- boton ampliacion -->
+                <div class="col-12 col-md-4 order-md-3 text-center text-md-end my-1">
+                  <button type="button" class="btn btn-outline-light" id="btnModuloGuiones">
+                    <i class="fas fa-expand"></i>
+                    
+                  </button>
                 </div>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                  aria-labelledby="panelsStayOpen-headingOne">
-                  <!-- <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div> -->
-
-                  <!-- card 1 -------------------------------------------------------------------------------------------->
-
-                  <div class="card mb-3 px-1 col-lg col-md-12 col-sm-12">
-                    <div class="row g-0">
-                      <div class="infoavance d-flex">
-                        <!-- start progress bar -->
-                        <!-- <div class="col-8 justify-content-center m-auto pt-4 align-item-center">
-                          <div class="progress d-flex col justify-content-start my-1">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%"
-                              aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                              20%
-                            </div>
-                          </div>
-                        </div> -->
-                        <!-- end progress bar -->
-
-                        <!-- checkbox-start -->
-                        <!-- <div class="form-check mx-1 pt-4  justify-content-center col-2">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                          <label class="form-check-label text-ends" for="flexCheckDefault">
-                            End
-                          </label>
-
-                        </div> -->
-
-                        <!-- checkbox-end-->
-
+               
+                <!-- texto titulo módulo -->
+                <div class="col-12 col-md-4 order-md-2 text-center mb-2 mb-md-0 my-1">
+                  <h2 class="text-light m-0">Módulo: Estilos </h2>
+                </div>
+      
+                
+  
+                 <!-- botones guias -->
+                 <div class="avances col-12 col-md-4 order-md-1  mb-md-0 d-flex justify-content-center justify-content-lg-start my-1">
+                  <div class="btn-group " role="group" aria-label="Navegación secundaria">
+                    <button type="button" class="btn btn-outline-light">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+      
+                    <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+                      aria-controls="offcanvasUser">
+                      <button type="button" class="btn btn-outline-light">
+                        <i class="fas fa-th-large"></i>
+                      </button>
+                    </a>
+      
+                    <button type="button" class="btn btn-outline-light">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+  
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+  
+      
+  
+  
+      <!-- espacio de informacion -->
+  
+      <div class=" info-student col-lg-9 col-md-12 col-sm-12 column-gap-3 m-auto px-2 rounded-3    ">
+        <ul class="  col-lg-12   list-group  gap-1 bg-dark-subtle p-2  ">
+  
+          <!-- primer panel de informacion -->
+          <li class="list-group-item">
+            <p class="d-inline-flex gap-1  w-100">
+              <a class="text-decoration-none text-center fs-4 text-dark pt-2 w-100 " data-bs-toggle="collapse"
+                href="#multiCollapseExample4" role="button" aria-expanded="true" aria-controls="multiCollapseExample4"><i
+                  class="fas fa-chevron-down "></i></a>
+  
+            </p>
+            <div class="row  ">
+              <div class="col">
+                <div class="collapse multi-collapse show " id="multiCollapseExample4">
+                  <!-- START  -->
+                  <div class="container ">
+  
+                    <!-- Sección de Introducción -->
+                    <div class="ingresovideos  text-center py-1 ">
+                      <h1 class="fw-bold text-body-dark">ESTILOS</h1>
+                      <p class="lead">Recorrido por las principales tendencias y exponentes del cine </p>
+                    </div>
+  
+                    <div class="contenedor text-center   ">
+                      <div class="info-video ">
+                        <p> DESCUBRE: ¿Cómo comenzar en la produccion cinematografica?</p>
+                        <p>Nuestro segundo nivel, comienza en compañía de nuestros héroes.</p>
+  
                       </div>
-                      <div class="col-md-10 col-sm-12 m-auto py-4   ">
-                        <div class="card-body">
-                          <h5 class="card-title ">
-                            Video: Introducción al Guion Cinematográfico
-                          </h5>
-                          <p class="card-text">
-                            lead-in to additional content. This content is a little
-                            bit longer
-                          </p>
-                          <p class="card-text">
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
-                          </p>
+  
+                      <div class="row m-auto  " style="width: 80%;"> 
+                      <div class="container col-lg-11 mb-4 mb-5 col-md-12 col-sm-12   ">
+                        <!-- Barra de progreso -->
+                        <div class="progress border border-dark " style="height: 20px;">
+                          <div id="barraProgreso" class="progress-bar " role="progressbar" style="width: 0%; height: 20px;"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+  
+                      <div class="box-bandera col-lg-1 col-md-12 col-sm-12 text-center  ">
+                        <div class="bandera  text-center m-auto py-2">
+                          <i class="fas fa-flag  "></i>
+                        </div>
+                      </div>
+  
+                    </div>
+  
+                    </div>
+  
+                    <!-- Botones de navegación -->
+                    <div class="container mb-4">
+                      <div class="row justify-content-center g-2">
+                        <div class="col-lg-4 col-sm-12 col-md-4">
+                          <a href="#" class="btn btn-dark  bg-dark border w-100">Anterior Módulo</a>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 col-md-4">
+                          <a href="./dashboard.html" class="btn btn-dark border w-100">Dashboard</a>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 col-md-4">
+                          <a href="#" class="siguienteMod btn btn-dark bg-dark border w-100">Siguiente Módulo</a>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                  <!-- END -->
+                </div>
+              </div>
+            </div>
+  
+  
+          </li>
+  
+  
+  
+          <!-- collapse estudiantes -->
+          <li class="list-group-item rounded-3">
+            <p class="d-inline-flex gap-1 w-100">
+              <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample1"
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Video:Los estilos e Historia del arte
+                Cinematográfico</a>
+  
+            </p>
+            <div class="row ">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+  
+                  <div class="col-md-12 col-sm-12 m-auto  ">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        Video:Los estilos e Historia del arte Cinematográfico
+                      </h5>
+                      <p class="card-text">
+                        lead-in to additional content. This content is a little
+                        bit longer
+                      </p>
+                      <p class="card-text">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                      </p>
 
-                          <div> 
-                            <h2> Lo que aprenderás </h2>
+                      <div class="container-fluid">
+                      <h2> Lo que aprenderás </h2>
                             
                             <p> Resumen: historia del cine , del experimento a la industria cinematografica</p>
                             
@@ -384,99 +417,35 @@
                             <p>¿Qué es el Efecto Kuleshov y cómo se aplica a la música?</p>
                             
                             <p>Cómo crear películas con más significado y emoción</p>
-                            
-                            </div>
 
-                          <!-- Button trigger modal ------------------------------------------------------------------------------------------------------------------------>
-                          <!--  <button
-              type="button"
-              class="btn btn-primary   mx-2 mb-2   "
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              Launch static backdrop modal
-            </button> -->
-
-
-                        </div>
-                      </div>
+                          </div>
+  
                     </div>
-
-
-
-                    <!-- Modal -->
-                    <div class="modal fade modal-sm" id="staticBackdrop" data-bs-backdrop="static "
-                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                              Modal title
-                            </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-
-
-                          <div class="modal-body">
-                            ...
-
-                          </div>
-                          <div class="col-12 col-md-12 col-sm-12">
-                            <div>
-                              <iframe class="col-12 col-md-12 col-sm-12" height="700" class="border"
-                                src="https://www.youtube.com/embed/SMmfzHEOjAQ"
-                                title="Animación Artes UdeA #7| Chiwaia Guia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                    gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen></iframe>
-                            </div>
-                            <div class="row text-center">
-                              <div class="col-12 col-sm-12">
-                                <p style="
-                                height: 300px;
-    
-                                width: 80%;
-                                overflow: scroll;
-                                margin: auto;
-                              ">
-
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                              Close
-                            </button>
-                            <button type="button" class="btn btn-primary">
-                              Understood
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- end modal -->
                   </div>
-
-                  <!-- end card -->
+  
+  
                 </div>
               </div>
-
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                    aria-controls="panelsStayOpen-collapseTwo">
-                    <p class="px-3">EXPLORA</p>
-
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingTwo">
-                  <div class="accordion-body">
-                    <div class="info-video px-3 col-10 py-4 m-auto ">
-                      <p> EXPLORA</p>
+            </div>
+  
+          </li>
+  
+  
+          <!-- collapse instructores -->
+          <li class="list-group-item rounded-3">
+  
+            <p class="d-inline-flex gap-1 w-100">
+              <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample2"
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Explora</a>
+  
+            </p>
+            <div class="row  ">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <div class="info-video  col-10   ">
+                    <p> EXPLORA</p>
+                   
+                            <p> EXPLORA</p>
                       <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
                       <p>Aquí obtendrás recursos de descarga para complementar nuestro curso </p>
 
@@ -503,106 +472,112 @@
                         </li>
                       </ul>
 
-                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="accordion-item  ">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                    aria-controls="panelsStayOpen-collapseThree">
-                    <p class="px-3"> REVIVE</p>
-
-                  </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                  aria-labelledby="panelsStayOpen-headingThree">
-                  <div class="accordion-body">
-                    <p>
-                    <div class="info-video px-3 col-10 m-auto py-4">
-                      <p>REVIVE</p>
-                      <p>Esta es tu gran reto, descifra con nosotros los diferentes momentos que le dan sentido a la
-                        historia de la animación.</p>
-                      <p>Desarrolla nuestro test, en pocos minutos encuentra preguntas que te serviran para seguir
-                        adelante</p>
-                    </div>
-                    </p>
-                  </div>
+  
                 </div>
               </div>
             </div>
-          </div>
-
-        </div>
-
-        <!-- Panel 2 -->
-        <div class="carousel-item ">
-          <div class="container col-lg-8 col-md-10 col-sm-12">
-            <div class="accordion" id="accordionExample2">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    Accordion Item #2
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample2">
-                  <div class="accordion-body">
-                    <p>Contenido del segundo acordeón.</p>
+  
+  
+          </li>
+  
+          <li class="list-group-item">
+            <p class="d-inline-flex gap-1 w-100">
+              <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample6"
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Recursos </a>
+  
+            </p>
+            <div class="row  ">
+              <div class="col ">
+                <div class="collapse multi-collapse" id="multiCollapseExample6">
+                  <div class="info-video col-10 ">
+                    <p>REVIVE</p>
+                    <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
+                      <p>Aquí obtendrás recursos de descarga para complementar nuestro curso </p>
                   </div>
                 </div>
-              </div>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- <div class="container col-8
+       mt-5 "> -->
+      <!-- Barra de progreso -->
+      <!-- <div class="info-avance row container  ">
+          <p class="texto-informacion col  text-light" style="font-style: italic; "> Alcanza tu meta</p>
+          <i class="fa-solid fa-flag col fs-4 text-warning  text-end"></i>
+        </div>
+        <div class="col m-auto">
+          <div class="progress  ">
+  
+            <div class="progress-bar bg-success " role="progressbar" style="width: 20%" aria-valuenow="50"
+              aria-valuemin="0" aria-valuemax="100">
+              20%
             </div>
           </div>
         </div>
-
-        <!-- Panel 3 -->
-        <div class="carousel-item">
-          <div class="container col-lg-8 col-md-10 col-sm-12">
-            <div class="accordion" id="accordionExample3">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                    Accordion Item #3
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample3">
-                  <div class="accordion-body">
-                    <p>Contenido del tercer acordeón.</p>
-                  </div>
-                </div>
-              </div>
+      </div> -->
+  
+  
+      <div class="container col-8
+       mt-5   ">
+        <!-- Barra de progreso -->
+        <!-- <div class="progress mt-3">
+        <div
+          id="barraProgreso"
+          class="progress-bar"
+          role="progressbar"
+          style="width: 0%"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div> -->
+      </div>
+  
+  
+      <section class="newModel pb-4 py-1">
+        <!-- start acordeon model -->
+  
+        <div id="carouselExample " class="carousel slide " data-bs-ride="false">
+          <div class="carousel-inner">
+            <!-- Panel 1 -->
+            <div class="carousel-item active">
+  
+  
             </div>
+
+  
+      </section>
+  
+  
+
+      </div>
+  
+  
+    </main>
+  
+    <!-- Modal de Felicitaciones -->
+    <div class="modal fade" id="modalFelicitaciones" tabindex="-1" aria-labelledby="modalFelicitacionesLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalFelicitacionesLabel">¡Felicitaciones!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center text-dark">Has completado este módulo exitosamente. ¿Qué deseas hacer ahora?</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" id="btnQuedarse">Continuar en este módulo</button>
+            <a href="./produccion.html" class="btn btn-primary" id="btnSiguienteModulo">Ir al siguiente módulo</a>
           </div>
         </div>
       </div>
-
-      <!-- Controles del Carousel -->
-      <!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div> -->
-
-    </section>
+    </div>
 
 
-
-
-
-
-  </main>
-
-
-
+  
 
   <!-- Footer -->
 
