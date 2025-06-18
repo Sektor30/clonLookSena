@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
             barraProgreso.style.width = '100%';
             barraProgreso.setAttribute('aria-valuenow', 100);
             barraProgreso.textContent = '100%';
+            
+            // Activar la bandera en verde
+            const bandera = document.querySelector('.bandera i');
+            if (bandera) {
+                bandera.style.color = '#28a745';
+            }
         });
     }
 
