@@ -593,33 +593,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
-  <script>
-    // Obtener referencias a los elementos
-    const video = document.getElementById('miVideo');
-    const barraProgreso = document.getElementById('barraProgreso');
-
-    // Función para actualizar la barra de progreso
-    function actualizarBarraProgreso() {
-      if (video.duration) {
-        const porcentaje = (video.currentTime / video.duration) * 100;
-        barraProgreso.style.width = porcentaje + '%';
-        barraProgreso.setAttribute('aria-valuenow', porcentaje);
-        barraProgreso.textContent = Math.round(porcentaje) + '%';
-      }
-    }
-
-    // Eventos del video
-    video.addEventListener('timeupdate', actualizarBarraProgreso);
-    video.addEventListener('loadedmetadata', actualizarBarraProgreso);
-
-    // Evento para cuando el video termina
-    video.addEventListener('ended', () => {
-      barraProgreso.style.width = '100%';
-      barraProgreso.setAttribute('aria-valuenow', 100);
-      barraProgreso.textContent = '100%';
-    });
-  </script>
+  <script src="../js/guiones.js"></script>
 
 </body>
 
