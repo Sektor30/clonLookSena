@@ -33,18 +33,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (video && barraProgreso) {
         // Función para actualizar la barra de progreso
-        function actualizarBarraProgreso() {
-            if (video.duration) {
-                const porcentaje = (video.currentTime / video.duration) * 100;
-                barraProgreso.style.width = porcentaje + '%';
-                barraProgreso.setAttribute('aria-valuenow', porcentaje);
-                barraProgreso.textContent = Math.round(porcentaje) + '%';
+        function actualizarBarraProgreso(porcentaje) {
+            barraProgreso.style.width = porcentaje + '%';
+            barraProgreso.setAttribute('aria-valuenow', porcentaje);
+            
+            // Si el progreso llega al 100%, mostrar el modal
+            if (porcentaje >= 100) {
+                mostrarModalFelicitaciones();
+                // Habilitar el botón de siguiente módulo
+                const btnSiguienteMod = document.querySelector('.siguienteMod');
+                if (btnSiguienteMod) {
+                    btnSiguienteMod.removeAttribute('disabled');
+                }
             }
         }
 
         // Eventos del video
-        video.addEventListener('timeupdate', actualizarBarraProgreso);
-        video.addEventListener('loadedmetadata', actualizarBarraProgreso);
+        video.addEventListener('timeupdate', () => {
+            if (video.duration) {
+                const porcentaje = (video.currentTime / video.duration) * 100;
+                actualizarBarraProgreso(porcentaje);
+            }
+        });
+        video.addEventListener('loadedmetadata', () => {
+            if (video.duration) {
+                const porcentaje = (video.currentTime / video.duration) * 100;
+                actualizarBarraProgreso(porcentaje);
+            }
+        });
 
         // Evento para cuando el video termina
         video.addEventListener('ended', () => {
@@ -78,3 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Función para mostrar el modal de felicitaciones
+function mostrarModalFelicitaciones() {
+    const modal = new bootstrap.Modal(document.getElementById('modalFelicitaciones'));
+    modal.show();
+}

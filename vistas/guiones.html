@@ -62,6 +62,34 @@
     .bandera:hover i {
       color: #28a745;
     }
+
+
+
+    /* responisive */
+
+    @media (max-width: 1200px) {
+      
+
+
+    }
+
+    @media (max-width: 768px) {
+
+
+    }
+
+    @media (max-width: 576px) {
+    
+    }
+
+    
+    @media (max-width: 250px){
+
+    }
+
+
+
+
   </style>
 
 
@@ -323,17 +351,17 @@
                     </div>
 
                     <div class="row m-auto  " style="width: 80%;"> 
-                    <div class="container col-8 my-2 mb-5  ">
+                    <div class="container col-lg-11 mb-4 mb-5 col-md-12 col-sm-12   ">
                       <!-- Barra de progreso -->
                       <div class="progress border border-dark " style="height: 20px;">
-                        <div id="barraProgreso" class="progress-bar" role="progressbar" style="width: 0%; height: 20px;"
+                        <div id="barraProgreso" class="progress-bar " role="progressbar" style="width: 0%; height: 20px;"
                           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
 
-                    <div class="col-lg-2">
-                      <div class="bandera ">
-                        <i class="fas fa-flag"></i>
+                    <div class="box-bandera col-lg-1 col-md-12 col-sm-12 text-center  ">
+                      <div class="bandera  text-center m-auto py-2">
+                        <i class="fas fa-flag  "></i>
                       </div>
                     </div>
 
@@ -513,62 +541,23 @@
 
   </main>
 
-  <!-- 
-    
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="card h-100 shadow">
-                <div class="card-body">
-    
-                  <h5 class="card-title">Video: Introducción</h5>
-                  <p class="card-text">Duración: 1 min</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow">
-                <div class="card-body">
-                  <h5 class="card-title">Desarrollo de Personajes</h5>
-                  <p class="card-text">Duración: 7 min</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow">
-                <div class="card-body">
-                  <h5 class="card-title">Estructura y Formato</h5>
-                  <p class="card-text">Duración: 6 min</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-4">
-              <div class="card h-100 shadow">
-                <div class="card-body">
-                  <h5 class="card-title">Documento de estudio</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow">
-                <div class="card-body">
-                  <h5 class="card-title">Ideas y Proyecto</h5>
-                  <p class="card-text">Inspírate y aprende más</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow">
-                <div class="card-body">
-                  <h5 class="card-title">Test Final</h5>
-                  <p class="card-text">Obtén nuevo contenido</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- Modal de Felicitaciones -->
+  <div class="modal fade" id="modalFelicitaciones" tabindex="-1" aria-labelledby="modalFelicitacionesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFelicitacionesLabel">¡Felicitaciones!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    
-     -->
+        <div class="modal-body">
+          <p class="text-center text-dark">Has completado este módulo exitosamente. ¡Puedes continuar con el siguiente!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
 
