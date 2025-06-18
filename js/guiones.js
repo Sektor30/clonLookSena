@@ -99,4 +99,27 @@ document.addEventListener('DOMContentLoaded', function() {
 function mostrarModalFelicitaciones() {
     const modal = new bootstrap.Modal(document.getElementById('modalFelicitaciones'));
     modal.show();
+
+    // Manejar el botón de quedarse en el módulo
+    const btnQuedarse = document.getElementById('btnQuedarse');
+    if (btnQuedarse) {
+        btnQuedarse.addEventListener('click', function() {
+            modal.hide();
+            // Reiniciar el video si es necesario
+            const video = document.getElementById('miVideo');
+            if (video) {
+                video.currentTime = 0;
+                video.play();
+            }
+        });
+    }
+
+    // El botón de siguiente módulo ya tiene el href configurado en el HTML
+    const btnSiguienteModulo = document.getElementById('btnSiguienteModulo');
+    if (btnSiguienteModulo) {
+        btnSiguienteModulo.addEventListener('click', function() {
+            // La redirección se maneja automáticamente por el href
+            modal.hide();
+        });
+    }
 }
