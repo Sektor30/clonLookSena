@@ -57,6 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (bandera) {
                 bandera.style.color = '#28a745';
             }
+
+            // Activar el botón de siguiente módulo usando la clase específica
+            const btnSiguienteModulo = document.querySelector('.siguienteMod');
+            if (btnSiguienteModulo) {
+                btnSiguienteModulo.classList.remove('bg-dark');
+                btnSiguienteModulo.classList.add('bg-primary');
+                btnSiguienteModulo.href = './produccion.html';
+            }
         });
     }
 
