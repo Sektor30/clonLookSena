@@ -19,14 +19,46 @@
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    .nav-link{
+    .nav-link {
       color: #ffffff;
     }
-    .nav-link:hover{
+
+    .nav-link:hover {
       color: #06aefc;
     }
-    .dropdown-toggle{
+
+    .dropdown-toggle {
       color: #06aefc;
+    }
+
+    .video-yt {
+      width: 75%;
+      transition: width 0.3s ease;
+    }
+
+    .video-yt.full-width {
+      width: 100%;
+    }
+
+    /* Estilos para la bandera */
+    .bandera {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .bandera i {
+      font-size: 1.5rem;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+
+    .bandera:hover i {
+      color: #28a745;
     }
   </style>
 
@@ -178,13 +210,367 @@
   
 </div>
 
+
 <main class="bg-dark">
 
-  <!-- Sección de Inicio -->
-  <div id="inicio" class="text-center py-2 " style="background-image: url('') ;
-     background-repeat: no-repeat;background-position: center; object-fit: contain; height:200px;">
-    <img src="" class=" col-8 img-top mb-3">
+
+
+
+  <div class="row">
+    <!-- Video principal: se muestra primero en móviles, pero segundo en md+ -->
+    <div class="col-md-12 order-md-2 ">
+      <!-- Video principal -->
+      <div class="container-fluid px-0 mb-2">
+        <div class="video-yt m-auto">
+          <video id="miVideo" width="100%" controls>
+            <source
+              src="https://cdn.pixabay.com/video/2015/10/16/992-142621119_large.mp4"
+              type="video/mp4" />
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Barra de navegación secundaria: se muestra segunda en móviles, pero primero en md+ -->
+    <div class="col-md-12 order-md-1 ">
+      <!-- Barra de navegación secundaria -->
+      <div class="container-fluid bg-primary py-2">
+        <div class="container">
+          <div class="row  align-items-center">
+
+            <!-- boton ampliacion -->
+            <div class="col-12 col-md-4 order-md-3 text-center text-md-end my-1">
+              <button type="button" class="btn btn-outline-light" id="btnModuloProduccion">
+                <i class="fas fa-expand"></i>
+                
+              </button>
+            </div>
+           
+            <!-- texto titulo módulo -->
+            <div class="col-12 col-md-4 order-md-2 text-center mb-2 mb-md-0 my-1">
+              <h2 class="text-light m-0">Módulo: Producción </h2>
+            </div>
+  
+            
+
+             <!-- botones guias -->
+             <div class="avances col-12 col-md-4 order-md-1  mb-md-0 d-flex justify-content-center justify-content-lg-start my-1">
+              <div class="btn-group " role="group" aria-label="Navegación secundaria">
+                <button type="button" class="btn btn-outline-light">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+  
+                <a id="btnExpandir" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+                  aria-controls="offcanvasUser">
+                  <button type="button" class="btn btn-outline-light">
+                    <i class="fas fa-th-large"></i>
+                  </button>
+                </a>
+  
+                <button type="button" class="btn btn-outline-light">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
+  
+
+  
+
+
+  <!-- espacio de informacion -->
+
+  <div class=" info-student col-lg-9 col-md-12 col-sm-12 column-gap-3 m-auto px-2 rounded-3    ">
+    <ul class="  col-lg-12   list-group  gap-1 bg-dark-subtle p-2  ">
+
+      <!-- primer panel de informacion -->
+      <li class="list-group-item">
+        <p class="d-inline-flex gap-1  w-100">
+          <a class="text-decoration-none text-center fs-4 text-dark pt-2 w-100 " data-bs-toggle="collapse"
+            href="#multiCollapseExample4" role="button" aria-expanded="true" aria-controls="multiCollapseExample4"><i
+              class="fas fa-chevron-down "></i></a>
+
+        </p>
+        <div class="row  ">
+          <div class="col">
+            <div class="collapse multi-collapse show " id="multiCollapseExample4">
+              <!-- START  -->
+              <div class="container ">
+
+                <!-- Sección de Introducción -->
+                <div class="ingresovideos  text-center py-1 ">
+                  <h1 class="fw-bold text-body-dark">PRODUCCIÓN</h1>
+                  <p class="lead">Recorrido por las principales tendencias y exponentes del cine </p>
+                </div>
+
+                <div class="contenedor text-center   ">
+                  <div class="info-video ">
+                    <p> DESCUBRE: ¿Cómo comenzar en la produccion cinematografica?</p>
+                    <p>Nuestro segundo nivel, comienza en compañía de nuestros héroes.</p>
+
+                  </div>
+
+                  <div class="row m-auto  " style="width: 80%;"> 
+                  <div class="container col-lg-11 mb-4 mb-5 col-md-12 col-sm-12   ">
+                    <!-- Barra de progreso -->
+                    <div class="progress border border-dark " style="height: 20px;">
+                      <div id="barraProgreso" class="progress-bar " role="progressbar" style="width: 0%; height: 20px;"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="box-bandera col-lg-1 col-md-12 col-sm-12 text-center  ">
+                    <div class="bandera  text-center m-auto py-2">
+                      <i class="fas fa-flag  "></i>
+                    </div>
+                  </div>
+
+                </div>
+
+                </div>
+
+               <!-- Botones de navegación -->
+               <div class="container mb-4">
+                <div class="row justify-content-center g-2">
+                  <div class="col-lg-4 col-sm-12 col-md-4">
+                    <a href="./guiones.html" class="btn btn-dark  bg-dark border w-100">Anterior Módulo</a>
+                  </div>
+                  <div class="col-lg-4 col-sm-12 col-md-4">
+                    <a href="./dashboard.html" class="btn btn-dark border w-100">Dashboard</a>
+                  </div>
+                  <div class="col-lg-4 col-sm-12 col-md-4">
+                    <a href="#" class="siguienteMod btn btn-dark bg-dark border w-100">Siguiente Módulo</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <!-- END -->
+            </div>
+          </div>
+        </div>
+
+
+      </li>
+
+
+
+      <!-- collapse estudiantes -->
+      <li class="list-group-item rounded-3">
+        <p class="d-inline-flex gap-1 w-100">
+          <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample1"
+            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Video:Los estilos e Historia del arte
+            Cinematográfico</a>
+
+        </p>
+        <div class="row ">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+
+              <div class="col-md-12 col-sm-12 m-auto  ">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Video:Los estilos e Historia del arte Cinematográfico
+                  </h5>
+                  <p class="card-text">
+                    lead-in to additional content. This content is a little
+                    bit longer
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                  </p>
+
+                  <div class="container-fluid">
+                  <h2> Lo que aprenderás </h2>
+                        
+                        <p> Resumen: historia del cine , del experimento a la industria cinematografica</p>
+                        
+                        <p>Por qué la elección del color es tan importante y cómo afecta a diferentes emociones</p>
+                        
+                        <p>Significado de diferentes Ángulos y Movimientos de Cámara</p>
+                        
+                        <p>Cómo la Iluminación crea diferentes estados de ánimo</p>
+                        
+                        <p>Cómo el Sonido / Música / Silencio crean Emoción</p>
+                        
+                        <p>Entender por qué la Ubicación y la Decoración de Escenarios son tan importantes para crear la atmósfera adecuada</p>
+                        
+                        <p>¿Qué significa tener música Dentro de la película o Fuera?</p>
+                        
+                        <p>¿Qué es el Efecto Kuleshov y cómo se aplica a la música?</p>
+                        
+                        <p>Cómo crear películas con más significado y emoción</p>
+
+                      </div>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </li>
+
+
+      <!-- collapse instructores -->
+      <li class="list-group-item rounded-3">
+
+        <p class="d-inline-flex gap-1 w-100">
+          <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample2"
+            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Explora</a>
+
+        </p>
+        <div class="row  ">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+              <div class="info-video  col-10   ">
+                <p> EXPLORA</p>
+               
+                        <p> EXPLORA</p>
+                  <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
+                  <p>Aquí obtendrás recursos de descarga para complementar nuestro curso </p>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex  " style="justify-content: space-between;">
+                      <h2>Conoce nuestro proyecto</h2>
+                      <p><a class=" pt-2 pe-auto ">00:01</a></p>
+                    </li>
+                    <li class="list-group-item d-flex  " style="justify-content: space-between;">
+                      <h2>Conoce nuestro proyecto</h2>
+                      <p><a class=" pt-2 pe-auto ">00:01</a></p>
+                    </li>
+                    <li class="list-group-item d-flex  " style="justify-content: space-between;">
+                      <h2>Conoce nuestro proyecto</h2>
+                      <p><a class=" pt-2 pe-auto ">00:01</a></p>
+                    </li>
+                    <li class="list-group-item d-flex  " style="justify-content: space-between;">
+                      <h2>Conoce nuestro proyecto</h2>
+                      <p><a class=" pt-2 pe-auto ">00:01</a></p>
+                    </li>
+                    <li class="list-group-item d-flex  " style="justify-content: space-between;">
+                      <h2>Conoce nuestro proyecto</h2>
+                      <p><a class=" pt-2 pe-auto ">00:01</a></p>
+                    </li>
+                  </ul>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </li>
+
+      <li class="list-group-item">
+        <p class="d-inline-flex gap-1 w-100">
+          <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample6"
+            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Recursos </a>
+
+        </p>
+        <div class="row  ">
+          <div class="col ">
+            <div class="collapse multi-collapse" id="multiCollapseExample6">
+              <div class="info-video col-10 ">
+                <p>REVIVE</p>
+                <p>Nuestro primer nivel, comienza en compañía de nuestros héroes.</p>
+                  <p>Aquí obtendrás recursos de descarga para complementar nuestro curso </p>
+              </div>
+            </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- <div class="container col-8
+   mt-5 "> -->
+  <!-- Barra de progreso -->
+  <!-- <div class="info-avance row container  ">
+      <p class="texto-informacion col  text-light" style="font-style: italic; "> Alcanza tu meta</p>
+      <i class="fa-solid fa-flag col fs-4 text-warning  text-end"></i>
+    </div>
+    <div class="col m-auto">
+      <div class="progress  ">
+
+        <div class="progress-bar bg-success " role="progressbar" style="width: 20%" aria-valuenow="50"
+          aria-valuemin="0" aria-valuemax="100">
+          20%
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="container col-8
+   mt-5   ">
+    <!-- Barra de progreso -->
+    <!-- <div class="progress mt-3">
+    <div
+      id="barraProgreso"
+      class="progress-bar"
+      role="progressbar"
+      style="width: 0%"
+      aria-valuenow="0"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    ></div>
+  </div> -->
+  </div>
+
+
+  <section class="newModel pb-4 py-1">
+    <!-- start acordeon model -->
+
+    <div id="carouselExample " class="carousel slide " data-bs-ride="false">
+      <div class="carousel-inner">
+        <!-- Panel 1 -->
+        <div class="carousel-item active">
+
+
+        </div>
+
+
+  </section>
+
+
+
+  </div>
+
+
+</main>
+
+<!-- Modal de Felicitaciones -->
+<div class="modal fade" id="modalFelicitaciones" tabindex="-1" aria-labelledby="modalFelicitacionesLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark"  id="modalFelicitacionesLabel">¡Felicitaciones!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center text-dark">Has completado este módulo exitosamente. ¿Qué deseas hacer ahora?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" id="btnQuedarse">Continuar en este módulo</button>
+        <a href="./edicion.html" class="btn btn-primary" id="btnSiguienteModulo">Ir al siguiente módulo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<main class="bg-dark">
+
 
   <!-- Sección de Introducción -->
   <div class="ingresovideos  text-center py-5 ">
@@ -538,10 +924,6 @@
 
 
 
-
-
-
-</main>
 
 
    
