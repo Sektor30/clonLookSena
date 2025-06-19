@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnIniciarSesion = document.querySelector('#btniniciar');
     const btnModulos = document.querySelector('#btnmodulos');
     const userIcon = document.querySelector("#ico");
+    const btnExpandir = document.querySelector("#btnExpandir");
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
   
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     btnModulos.style.display = "none";
     userIcon.style.display = "none";
+    btnExpandir.style.display = "none";
     btnRegistro.style.display = "block";
     btnIniciarSesion.style.display = "block";
 });
