@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (btnSiguienteModulo) {
                 btnSiguienteModulo.classList.remove('bg-dark');
                 btnSiguienteModulo.classList.add('bg-primary');
-                btnSiguienteModulo.href = './produccion.html';
+                btnSiguienteModulo.href = './guiones.html';
             }
         });
     }
