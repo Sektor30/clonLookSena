@@ -40,11 +40,101 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  
+// Funcionalidad del video y barra de progreso
+document.addEventListener('DOMContentLoaded', function() {
   const video = document.getElementById('miVideo');
-  const barra = document.getElementById('barraProgreso');
+  const barraProgreso = document.getElementById('barraProgreso');
 
-  video.addEventListener('timeupdate', () => {
-    const porcentaje = (video.currentTime / video.duration) * 100;
-    barra.style.width = porcentaje + '%';
-    barra.setAttribute('aria-valuenow', porcentaje.toFixed(0));
-  });
+  if (video && barraProgreso) {
+      // Función para actualizar la barra de progreso
+      function actualizarBarraProgreso(porcentaje) {
+          barraProgreso.style.width = porcentaje + '%';
+          barraProgreso.setAttribute('aria-valuenow', porcentaje);
+          
+          // Si el progreso llega al 100%, mostrar el modal
+          if (porcentaje >= 100) {
+              mostrarModalFelicitaciones();
+              // Habilitar el botón de siguiente módulo
+              const btnSiguienteMod = document.querySelector('.siguienteMod');
+              if (btnSiguienteMod) {
+                  btnSiguienteMod.removeAttribute('disabled');
+              }
+          }
+      }
+
+      // Eventos del video
+      video.addEventListener('timeupdate', () => {
+          if (video.duration) {
+              const porcentaje = (video.currentTime / video.duration) * 100;
+              actualizarBarraProgreso(porcentaje);
+          }
+      });
+      video.addEventListener('loadedmetadata', () => {
+          if (video.duration) {
+              const porcentaje = (video.currentTime / video.duration) * 100;
+              actualizarBarraProgreso(porcentaje);
+          }
+      });
+
+      // Evento para cuando el video termina
+      video.addEventListener('ended', () => {
+          barraProgreso.style.width = '100%';
+          barraProgreso.setAttribute('aria-valuenow', 100);
+          barraProgreso.textContent = '100%';
+          
+          // Activar la bandera en verde
+          const bandera = document.querySelector('.bandera i');
+          if (bandera) {
+              bandera.style.color = '#28a745';
+          }
+
+          // Activar el botón de siguiente módulo usando la clase específica
+          const btnSiguienteModulo = document.querySelector('.siguienteMod');
+          if (btnSiguienteModulo) {
+              btnSiguienteModulo.classList.remove('bg-dark');
+              btnSiguienteModulo.classList.add('bg-primary');
+              btnSiguienteModulo.href = './edicion.html';
+          }
+      });
+  }
+
+  // Funcionalidad de cambio de tamaño del video
+  const btnModuloGuiones = document.getElementById('btnModuloProduccion');
+  const videoContainer = document.querySelector('.video-yt');
+  
+  if (btnModuloGuiones && videoContainer) {
+      btnModuloGuiones.addEventListener('click', function() {
+          videoContainer.classList.toggle('full-width');
+      });
+  }
+});
+
+// Función para mostrar el modal de felicitaciones
+function mostrarModalFelicitaciones() {
+  const modal = new bootstrap.Modal(document.getElementById('modalFelicitaciones'));
+  modal.show();
+
+  // Manejar el botón de quedarse en el módulo
+  const btnQuedarse = document.getElementById('btnQuedarse');
+  if (btnQuedarse) {
+      btnQuedarse.addEventListener('click', function() {
+          modal.hide();
+          // Reiniciar el video si es necesario
+          const video = document.getElementById('miVideo');
+          if (video) {
+              video.currentTime = 0;
+              video.pause();
+          }
+      });
+  }
+
+  // El botón de siguiente módulo ya tiene el href configurado en el HTML
+  const btnSiguienteModulo = document.getElementById('btnSiguienteModulo');
+  if (btnSiguienteModulo) {
+      btnSiguienteModulo.addEventListener('click', function() {
+          // La redirección se maneja automáticamente por el href
+          modal.hide();
+      });
+  }
+}
