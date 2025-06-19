@@ -109,7 +109,7 @@ function mostrarModalFelicitaciones() {
             const video = document.getElementById('miVideo');
             if (video) {
                 video.currentTime = 0;
-                video.play();
+                video.pause();
             }
         });
     }

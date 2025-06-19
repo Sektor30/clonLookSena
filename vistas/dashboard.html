@@ -447,11 +447,16 @@
                           <div class="profile-sidebar   rounded-3 ">
                             <!-- SIDEBAR USERPIC -->
                             <div class="profile-userpic   text-center  ">
-                              <img src="https://cdn.pixabay.com/photo/2024/10/04/15/22/ai-generated-9096732_1280.jpg" class="img-responsive" alt="imagen user" style=" width: 100%; " />
+
+                              <a href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
+                              <img src="https://cdn.pixabay.com/photo/2024/10/04/15/22/ai-generated-9096732_1280.jpg" class="img-responsive" alt="imagen user"
+                               style=" width: 100%; " />
+                              </a>
                             </div>
                             <!-- END SIDEBAR USERPIC -->
                             <!-- SIDEBAR USER TITLE -->
                             <div class="profile-usertitle">
+                              
                               <p><strong>Nombre:</strong>
                               <p id="NombreU">fss</p>
                               </p>
@@ -460,13 +465,47 @@
                             <!-- END SIDEBAR USER TITLE -->
                             <!-- SIDEBAR BUTTONS -->
                             <div class="profile-userbuttons row justify-content-center py-3">
-                              <button type="button" class=" col-4  btn btn-success btn-sm">
+                              <button type="button" class="col-4 btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
                                 Editar
                               </button>
-                              <button type="button" class=" col-4 btn btn-danger btn-sm">
-                                Cerrar sesión
+
+
+                              <a href="./cerrando.html" class="col-5">
+                                <button class="btn-sm btn btn-danger" type="button ">
+                                  Cerrar sesión
                               </button>
+                            </a> 
                             </div>
+
+                            <!-- Modal Editar Perfil -->
+  <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="modalEditarPerfilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered center ">
+      <div class="modal-content  rounded-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarPerfilLabel">Editar Perfil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario de edición de perfil -->
+          <form>
+            <div class="mb-3">
+              <label for="nombrePerfil" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombrePerfil" placeholder="Tu nombre">
+            </div>
+            <div class="mb-3">
+              <label for="emailPerfil" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="emailPerfil" placeholder="tu@email.com">
+            </div>
+            <!-- Puedes agregar más campos aquí si lo necesitas -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
                   
 
 
@@ -810,12 +849,22 @@
                   <div class="collapse multi-collapse" id="multiCollapseExample6">
                     <div class="container">
                       <div class=" row justify-content-center py-3 gap-2">
-                        <button type="button" class=" col-lg-4 col-md-8  btn btn-dark btn-sm rounded-2">
+
+                        
+                       
+                        <button type="button" class=" col-lg-4 col-md-8  btn btn-success btn-sm rounded-2"
+                         data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
                           Editar
                         </button>
-                        <button type="button" class=" col-lg-4 col-md-8 btn btn-dark btn-sm rounded-2">
+
+
+
+                        <a href="./cerrando.html" class="col-lg-5 col-md-8  ">
+                        <button type="button" class="btn btn-dark btn-sm rounded-2 p-3">
                           Cerrar sesión
                         </button>
+                        </a>
+
                       </div>
                     </div>
                   </div>
@@ -1133,6 +1182,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+  
 
 </body>
 

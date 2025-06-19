@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Funcionalidad de cambio de tamaño del video
-    const btnModuloGuiones = document.getElementById('btnModuloGuiones');
+    const btnModuloEstilos = document.getElementById('btnModuloEstilos');
     const videoContainer = document.querySelector('.video-yt');
     
-    if (btnModuloGuiones && videoContainer) {
-        btnModuloGuiones.addEventListener('click', function() {
+    if (btnModuloEstilos && videoContainer) {
+        btnModuloEstilos.addEventListener('click', function() {
             videoContainer.classList.toggle('full-width');
         });
     }
@@ -111,7 +111,7 @@ function mostrarModalFelicitaciones() {
             const video = document.getElementById('miVideo');
             if (video) {
                 video.currentTime = 0;
-                video.play();
+                video.pause();
             }
         });
     }
