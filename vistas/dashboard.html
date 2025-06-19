@@ -647,14 +647,14 @@
             <button class="btn btn-primary">🔍</button>
           </div>
 
-          <div class="card col-lg-12  mb-3 border border-danger">
+          <div class="card col-lg-12  mb-3 ">
             <div class="card-header p-0">
               <div class="btn btn-link w-100 d-flex justify-content-between align-items-center" >
                 <span class="col-3">
                   <a href="./estilos.html" class="btn btn-primary rounded-2 text-white">MÓDULO:ESTILOS</a>
                 </span>
                 <span class="col-9  p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEstilos" aria-expanded="true" aria-controls="collapseEstilos" style="text-decoration:none;" >
-                  <i class="fa fa-chevron-down fs-2  "></i>
+                  <i class="fa fa-chevron-down fs-2" id="chevronEstilos"></i>
                 </span>
               </div>
             </div>
@@ -705,7 +705,7 @@
                   <a href="./guiones.html" class="btn btn-primary rounded-2 text-white">MÓDULO:GUIONES</a>
                 </span>
                 <span class="col-9  p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuiones" aria-expanded="false" aria-controls="collapseGuiones" style="text-decoration:none;" >
-                  <i class="fa fa-chevron-down fs-2  "></i>
+                  <i class="fa fa-chevron-down fs-2" id="chevronGuiones"></i>
                 </span>
               </div>
             </div>
@@ -754,7 +754,7 @@
                   <a href="./produccion.html" class="btn btn-primary rounded-2 text-white">M: PRODUCCION</a>
                 </span>
                 <span class="col-9  p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProduccion" aria-expanded="false" aria-controls="collapseProduccion" style="text-decoration:none;" >
-                  <i class="fa fa-chevron-down fs-2  "></i>
+                  <i class="fa fa-chevron-down fs-2" id="chevronProduccion"></i>
                 </span>
               </div>
             </div>
@@ -803,7 +803,7 @@
                   <a href="./edicion.html" class="btn btn-primary rounded-2 text-white">MÓDULO:EDICIÓN</a>
                 </span>
                 <span class="col-9  p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdicion" aria-expanded="false" aria-controls="collapseEdicion" style="text-decoration:none;" >
-                  <i class="fa fa-chevron-down fs-2  "></i>
+                  <i class="fa fa-chevron-down fs-2" id="chevronEdicion"></i>
                 </span>
               </div>
             </div>
@@ -1209,7 +1209,33 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  
+  <script>
+    // Script para activar el collapse al pasar el mouse por el ícono de flecha
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggles = [
+        {icon: '#collapseEstilos', chevron: '#chevronEstilos'},
+        {icon: '#collapseGuiones', chevron: '#chevronGuiones'},
+        {icon: '#collapseProduccion', chevron: '#chevronProduccion'},
+        {icon: '#collapseEdicion', chevron: '#chevronEdicion'}
+      ];
+      toggles.forEach(function(toggle) {
+        const chevron = document.querySelector(toggle.chevron);
+        if (chevron) {
+          chevron.addEventListener('mouseenter', function() {
+            const collapse = document.querySelector(toggle.icon);
+            if (collapse) {
+              const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse);
+              if (collapse.classList.contains('show')) {
+                bsCollapse.hide();
+              } else {
+                bsCollapse.show();
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 
