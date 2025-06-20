@@ -65,7 +65,30 @@ document.addEventListener('DOMContentLoaded', function() {
       function actualizarBarraProgreso(porcentaje) {
           barraProgreso.style.width = porcentaje + '%';
           barraProgreso.setAttribute('aria-valuenow', porcentaje);
-          
+          // Guardar progreso en localStorage para el usuario logueado
+          let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+          for (let i = 0; i < usuarios.length; i++) {
+              if (usuarios[i].logged) {
+                  if (!usuarios[i].progresoEdicion || usuarios[i].progresoEdicion < porcentaje) {
+                      usuarios[i].progresoEdicion = Math.floor(porcentaje);
+                      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                  }
+              }
+          }
+          // Actualizar barra de la card lateral si existe
+          const barraCard = document.getElementById('progress-edicion-card');
+          if (barraCard) {
+              barraCard.style.width = Math.floor(porcentaje) + '%';
+              barraCard.textContent = Math.floor(porcentaje) + '%';
+              barraCard.setAttribute('aria-valuenow', Math.floor(porcentaje));
+          }
+          // Actualizar barra de dashboard si está abierta
+          const barraDashboard = document.getElementById('progress-edicion-dashboard');
+          if (barraDashboard) {
+              barraDashboard.style.width = Math.floor(porcentaje) + '%';
+              barraDashboard.textContent = Math.floor(porcentaje) + '%';
+              barraDashboard.setAttribute('aria-valuenow', Math.floor(porcentaje));
+          }
           // Si el progreso llega al 100%, mostrar el modal
           if (porcentaje >= 100) {
               mostrarModalFelicitaciones();
