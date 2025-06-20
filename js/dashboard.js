@@ -31,6 +31,33 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
 
+   // Script para activar el collapse al pasar el mouse por el ícono de flecha
+   document.addEventListener('DOMContentLoaded', function() {
+    const toggles = [
+      {icon: '#collapseEstilos', chevron: '#chevronEstilos'},
+      {icon: '#collapseGuiones', chevron: '#chevronGuiones'},
+      {icon: '#collapseProduccion', chevron: '#chevronProduccion'},
+      {icon: '#collapseEdicion', chevron: '#chevronEdicion'}
+    ];
+    toggles.forEach(function(toggle) {
+      const chevron = document.querySelector(toggle.chevron);
+      if (chevron) {
+        chevron.addEventListener('mouseenter', function() {
+          const collapse = document.querySelector(toggle.icon);
+          if (collapse) {
+            const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse);
+            if (collapse.classList.contains('show')) {
+              bsCollapse.hide();
+            } else {
+              bsCollapse.show();
+            }
+          }
+        });
+      }
+    });
+  });
+
+
 //boton de certificado 
 document.addEventListener("DOMContentLoaded", function () {
     const quizz = document.querySelector("#btnQuizz")

@@ -429,21 +429,35 @@
         <div class=" info-student col-lg-12 col-md-12 col-sm-12 column-gap-3  px-2 rounded-3  ">
           <ul class="  col-lg-12   list-group  gap-1 bg-dark-subtle p-2  ">
 
-            <li class="list-group-item">
-              <p class="d-inline-flex gap-1  w-100">
-                <a class="text-decoration-none text-dark pt-2 w-100 " data-bs-toggle="collapse" href="#multiCollapseExample4"
-                  role="button" aria-expanded="true" aria-controls="multiCollapseExample4"> MI PERFIL</a>
+            <li class="list-group-item ">
+              
+                
+                  <div class="row justify-content-between align-items-center 
+                  "> 
+                    
+                    <a class="text-decoration-none text-dark  col-lg-7 col-md-4 col-sm-4 " data-bs-toggle="collapse" href="#multiCollapseExample4"
+                  role="button" aria-expanded="true" aria-controls="multiCollapseExample4"> MI PERFIL
 
-              </p>
-              <div class="row  ">
+                    
+                  </a>
+
+                  <div class="col-lg-3 col-md-5 col-sm-2 text-end  " type="button" style="text-decoration:none;color:gray; padding-top: 10px;" >
+                    <i class="fa fa-chevron-down fs-2" ></i>
+                  </div>                  
+                  </div>
+
+              
+              <div class="row ">
                 <div class="col">
-                  <div class="collapse multi-collapse show" id="multiCollapseExample4">
+                  
+                  <div class="collapse multi-collapse show " id="multiCollapseExample4">
+                    
 
                     <!-- START  -->
 
                     <div class="container">
                       <div class="row profile">
-                        <div class="col-md-12  ">
+                        <div class="col-md-12 ">
                           <div class="profile-sidebar   rounded-3 ">
                             <!-- SIDEBAR USERPIC -->
                             <div class="profile-userpic   text-center  ">
@@ -480,7 +494,7 @@
                             <!-- Modal Editar Perfil -->
   <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="modalEditarPerfilLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered center ">
-      <div class="modal-content  rounded-3">
+      <div class="modal-content  rounded-3 ">
         <div class="modal-header">
           <h5 class="modal-title" id="modalEditarPerfilLabel">Editar Perfil</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -1231,33 +1245,7 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <script>
-    // Script para activar el collapse al pasar el mouse por el ícono de flecha
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggles = [
-        {icon: '#collapseEstilos', chevron: '#chevronEstilos'},
-        {icon: '#collapseGuiones', chevron: '#chevronGuiones'},
-        {icon: '#collapseProduccion', chevron: '#chevronProduccion'},
-        {icon: '#collapseEdicion', chevron: '#chevronEdicion'}
-      ];
-      toggles.forEach(function(toggle) {
-        const chevron = document.querySelector(toggle.chevron);
-        if (chevron) {
-          chevron.addEventListener('mouseenter', function() {
-            const collapse = document.querySelector(toggle.icon);
-            if (collapse) {
-              const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse);
-              if (collapse.classList.contains('show')) {
-                bsCollapse.hide();
-              } else {
-                bsCollapse.show();
-              }
-            }
-          });
-        }
-      });
-    });
-  </script>
+  
 
 </body>
 
