@@ -194,3 +194,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Al reabrir, se tomará la imagen correcta gracias al evento 'show.bs.modal'.
     });
 });
+
+// Cargar lista de estudiantes
+document.addEventListener('DOMContentLoaded', () => {
+    const listaEstudiantes = document.getElementById('lista-estudiantes');
+    if (listaEstudiantes) {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        listaEstudiantes.innerHTML = ''; // Limpiar la lista por si acaso
+
+        usuarios.forEach(usuario => {
+            const li = document.createElement('li');
+            li.textContent = usuario.userName;
+            li.classList.add('list-group-item'); // Para que se vea como los otros items si es necesario
+            listaEstudiantes.appendChild(li);
+        });
+    }
+});
