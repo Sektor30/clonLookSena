@@ -60,43 +60,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-//caraga de barra de progreso Estilo.html
+//carga de barra de progreso Modulos
 
 document.addEventListener("DOMContentLoaded", function () {
     let user = JSON.parse(localStorage.getItem("usuarios")) || [];
+    let progresoTotal = 0;
     for (let i = 0; i < user.length; i++) {
         if (user[i].logged) {
             // Estilos
             const barraEstilos = document.getElementById('progress-estilos-dashboard');
+            let progresoEstilos = user[i].progresoEstilos || 0;
             if (barraEstilos) {
-                let progreso = user[i].progresoEstilos || 0;
-                barraEstilos.style.width = progreso + '%';
-                barraEstilos.textContent = progreso + '%';
-                barraEstilos.setAttribute('aria-valuenow', progreso);
+                barraEstilos.style.width = progresoEstilos + '%';
+                barraEstilos.textContent = progresoEstilos + '%';
+                barraEstilos.setAttribute('aria-valuenow', progresoEstilos);
+                if (progresoEstilos >= 100) progresoTotal += 20;
             }
             // Guiones
             const barraGuiones = document.getElementById('progress-guiones-dashboard');
+            let progresoGuiones = user[i].progresoGuiones || 0;
             if (barraGuiones) {
-                let progreso = user[i].progresoGuiones || 0;
-                barraGuiones.style.width = progreso + '%';
-                barraGuiones.textContent = progreso + '%';
-                barraGuiones.setAttribute('aria-valuenow', progreso);
+                barraGuiones.style.width = progresoGuiones + '%';
+                barraGuiones.textContent = progresoGuiones + '%';
+                barraGuiones.setAttribute('aria-valuenow', progresoGuiones);
+                if (progresoGuiones >= 100) progresoTotal += 20;
             }
             // Producción
             const barraProduccion = document.getElementById('progress-produccion-dashboard');
+            let progresoProduccion = user[i].progresoProduccion || 0;
             if (barraProduccion) {
-                let progreso = user[i].progresoProduccion || 0;
-                barraProduccion.style.width = progreso + '%';
-                barraProduccion.textContent = progreso + '%';
-                barraProduccion.setAttribute('aria-valuenow', progreso);
+                barraProduccion.style.width = progresoProduccion + '%';
+                barraProduccion.textContent = progresoProduccion + '%';
+                barraProduccion.setAttribute('aria-valuenow', progresoProduccion);
+                if (progresoProduccion >= 100) progresoTotal += 20;
             }
             // Edición
             const barraEdicion = document.getElementById('progress-edicion-dashboard');
+            let progresoEdicion = user[i].progresoEdicion || 0;
             if (barraEdicion) {
-                let progreso = user[i].progresoEdicion || 0;
-                barraEdicion.style.width = progreso + '%';
-                barraEdicion.textContent = progreso + '%';
-                barraEdicion.setAttribute('aria-valuenow', progreso);
+                barraEdicion.style.width = progresoEdicion + '%';
+                barraEdicion.textContent = progresoEdicion + '%';
+                barraEdicion.setAttribute('aria-valuenow', progresoEdicion);
+                if (progresoEdicion >= 100) progresoTotal += 20;
+            }
+            // Actualizar el progreso total en el dashboard
+            const progresoElem = document.getElementById('progreso');
+            if (progresoElem) {
+                progresoElem.textContent = progresoTotal + '%';
             }
         }
     }

@@ -28,6 +28,23 @@ document.addEventListener("DOMContentLoaded", function () {
     btnIniciarSesion.style.display = "block";
 });
 
+// modal seleccion 
+
+document.addEventListener('DOMContentLoaded', function() {
+    var btnResumen = document.getElementById('btnResumenDashboard');
+    if (btnResumen) {
+      btnResumen.addEventListener('click', function() {
+        var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
+        if (modal) modal.hide();
+        var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
+        setTimeout(function() {
+          offcanvas.show();
+        }, 300); // Espera a que el modal termine de cerrarse
+      });
+    }
+  });
+
+
 // Funcionalidad del video y barra de progreso
 document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('miVideo');
@@ -87,22 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // modal seleccion 
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var btnResumen = document.getElementById('btnResumenDashboard');
-            if (btnResumen) {
-              btnResumen.addEventListener('click', function() {
-                var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
-                if (modal) modal.hide();
-                var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
-                setTimeout(function() {
-                  offcanvas.show();
-                }, 300); // Espera a que el modal termine de cerrarse
-              });
-            }
-          });
-
+        
 
 
 
