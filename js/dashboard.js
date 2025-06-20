@@ -59,3 +59,21 @@ document.addEventListener("DOMContentLoaded", function () {
      
 
 })
+
+//caraga de barra de progreso Estilo.html
+
+document.addEventListener("DOMContentLoaded", function () {
+    let user = JSON.parse(localStorage.getItem("usuarios")) || [];
+    for (let i = 0; i < user.length; i++) {
+        if (user[i].logged) {
+            // Actualizar barra de progreso de Estilos
+            const barraEstilos = document.getElementById('progress-estilos-dashboard');
+            if (barraEstilos) {
+                let progreso = user[i].progresoEstilos || 0;
+                barraEstilos.style.width = progreso + '%';
+                barraEstilos.textContent = progreso + '%';
+                barraEstilos.setAttribute('aria-valuenow', progreso);
+            }
+        }
+    }
+});
