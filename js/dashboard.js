@@ -138,3 +138,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+// Cambiar imagen de perfil desde el modal
+document.querySelectorAll('.perfil-opcion').forEach(function(img) {
+  img.addEventListener('click', function() {
+    // Quitar borde de selección a todas
+    document.querySelectorAll('.perfil-opcion').forEach(function(i) {
+      i.style.border = '2px solid #dee2e6';
+    });
+    // Poner borde a la seleccionada
+    this.style.border = '2px solid #0dcaf0';
+    // Cambiar la imagen de perfil en el dashboard
+    document.querySelectorAll('.user-profile').forEach(function(userImg) {
+      userImg.src = img.getAttribute('data-img');
+    });
+  });
+});

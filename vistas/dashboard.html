@@ -456,12 +456,12 @@
                     <div class="container">
                       <div class="row profile">
                         <div class="col-md-12 ">
-                          <div class="profile-sidebar   rounded-3 ">
+                          <div class="profile-sidebar  rounded-3 ">
                             <!-- SIDEBAR USERPIC -->
                             <div class=" image-profile  ">
 
                               <a href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
-                              <img src="../assets/user-profile-removebg-preview.png" class="img-responsive" alt="imagen user"
+                              <img src="../assets/user-profile-removebg-preview.png" class="img-responsive user-profile" alt="imagen user"
                                style=" width: 100%; " />
                               </a>
                             </div>
@@ -510,6 +510,20 @@
             <div class="mb-3">
               <label for="emailPerfil" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="emailPerfil" placeholder="tu@email.com">
+            </div>
+            <!-- Selección de imagen de perfil -->
+            <div class="mb-3">
+              <label class="form-label">Imagen de perfil</label>
+              <div class="d-flex gap-3 justify-content-center align-items-center flex-wrap">
+                <img src="../assets/user-profile-removebg-preview.png" id="imgPerfilActual" class="img-thumbnail perfil-opcion" data-img="../assets/user-profile-removebg-preview.png" style="width: 80px; cursor:pointer; border: 2px solid #0dcaf0;" title="Actual">
+                <img src="https://cdn.pixabay.com/photo/2020/08/03/16/03/woman-5460395_960_720.jpg" id="imgPerfilFemenino" class="img-thumbnail perfil-opcion" data-img="https://cdn.pixabay.com/photo/2020/08/03/16/03/woman-5460395_960_720.jpg" style="width: 80px; cursor:pointer;" title="Femenino">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion" data-img="https://randomuser.me/api/portraits/men/32.jpg" style="width: 80px; cursor:pointer;" title="Aleatorio">
+              </div>
+              <div class="container justify-content-center text-center">
+                <small class="text-muted   m-auto ">Haz clic en una imagen para seleccionarla como tu perfil.</small>
+                
+              </div>
+              
             </div>
             <!-- Puedes agregar más campos aquí si lo necesitas -->
           </form>
