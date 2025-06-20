@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (btnSiguienteModulo) {
               btnSiguienteModulo.classList.remove('bg-dark');
               btnSiguienteModulo.classList.add('bg-primary');
-              btnSiguienteModulo.href = './edicion.html';
+              btnSiguienteModulo.href = './quizz.html';
           }
       });
   }
