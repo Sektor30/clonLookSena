@@ -64,6 +64,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // modal seleccion 
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var btnResumen = document.getElementById('btnResumenDashboard');
+            if (btnResumen) {
+              btnResumen.addEventListener('click', function() {
+                var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
+                if (modal) modal.hide();
+                var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
+                setTimeout(function() {
+                  offcanvas.show();
+                }, 300); // Espera a que el modal termine de cerrarse
+              });
+            }
+          });
+
+
+
+
         // Evento para cuando el video termina
         video.addEventListener('ended', () => {
             barraProgreso.style.width = '100%';
@@ -125,3 +144,4 @@ function mostrarModalFelicitaciones() {
         });
     }
 }
+

@@ -314,7 +314,21 @@
       </div>
     </div>
     
-    
+    <!-- Modal Opciones Dashboard -->
+  <div class="modal fade" id="modalOpcionesDashboard" tabindex="-1" aria-labelledby="modalOpcionesDashboardLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="modalOpcionesDashboardLabel">¿Qué opción prefieres?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <button type="button" class="btn btn-primary w-100 mb-2" onclick="window.location.href='./dashboard.html'">Dashboard completo</button>
+          <button type="button" class="btn btn-secondary w-100" id="btnResumenDashboard">Resumen</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     
 
@@ -556,21 +570,7 @@
     </div>
   </div>
 
-  <!-- Modal Opciones Dashboard -->
-  <div class="modal fade" id="modalOpcionesDashboard" tabindex="-1" aria-labelledby="modalOpcionesDashboardLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-dark" id="modalOpcionesDashboardLabel">¿Qué opción prefieres?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body text-center">
-          <button type="button" class="btn btn-primary w-100 mb-2" onclick="window.location.href='./dashboard.html'">Dashboard completo</button>
-          <button type="button" class="btn btn-secondary w-100" id="btnResumenDashboard">Resumen</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- Footer -->
 
@@ -627,21 +627,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="../js/guiones.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var btnResumen = document.getElementById('btnResumenDashboard');
-      if (btnResumen) {
-        btnResumen.addEventListener('click', function() {
-          var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
-          if (modal) modal.hide();
-          var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
-          setTimeout(function() {
-            offcanvas.show();
-          }, 300);
-        });
-      }
-    });
-  </script>
+  
 
 </body>
 

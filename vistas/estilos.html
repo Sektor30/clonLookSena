@@ -664,21 +664,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var btnResumen = document.getElementById('btnResumenDashboard');
-    if (btnResumen) {
-      btnResumen.addEventListener('click', function() {
-        var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
-        if (modal) modal.hide();
-        var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
-        setTimeout(function() {
-          offcanvas.show();
-        }, 300); // Espera a que el modal termine de cerrarse
-      });
-    }
-  });
-</script>
 
 </body>
 
