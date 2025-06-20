@@ -286,7 +286,7 @@
                       <i class="fas fa-chevron-left"></i>
                     </a>
   
-                    <a href="./dashboard.html" class="btn btn-outline-light">
+                    <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalOpcionesDashboard">
                       <i class="fas fa-th-large"></i>
                     </a>
   
@@ -382,10 +382,27 @@
   
   
           </li>
+
+           <!-- Modal Opciones Dashboard -->
+    <div class="modal fade" id="modalOpcionesDashboard" tabindex="-1" aria-labelledby="modalOpcionesDashboardLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark" id="modalOpcionesDashboardLabel">¿Qué opción prefieres?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body text-center">
+            <button type="button" class="btn btn-primary w-100 mb-2" onclick="window.location.href='./dashboard.html'">Dashboard completo</button>
+            <button type="button" class="btn btn-secondary w-100" id="btnResumenDashboard">Resumen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   
   
   
-          <!-- collapse estudiantes -->
+          <!-- informacion titulo video-->
           <li class="list-group-item rounded-3">
             <p class="d-inline-flex gap-1 w-100">
               <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample1"
@@ -444,7 +461,7 @@
           </li>
   
   
-          <!-- collapse instructores -->
+          <!-- explora seccion de descripcion y time line -->
           <li class="list-group-item rounded-3">
   
             <p class="d-inline-flex gap-1 w-100">
@@ -589,7 +606,7 @@
       </div>
     </div>
 
-
+   
   
 
   <!-- Footer -->
@@ -647,6 +664,21 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btnResumen = document.getElementById('btnResumenDashboard');
+    if (btnResumen) {
+      btnResumen.addEventListener('click', function() {
+        var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
+        if (modal) modal.hide();
+        var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
+        setTimeout(function() {
+          offcanvas.show();
+        }, 300); // Espera a que el modal termine de cerrarse
+      });
+    }
+  });
+</script>
 
 </body>
 
