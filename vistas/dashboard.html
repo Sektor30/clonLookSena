@@ -173,7 +173,7 @@
     border-radius: 0 !important;
   }
 
-  
+
 
   .dashboard-stat,
   .portlet {
@@ -428,28 +428,30 @@
           <ul class="col-lg-12 list-group  gap-1 bg-dark-subtle p-2  rounded-3">
 
             <li class="list-group-item ">
-              
-                
-          <div class="row justify-content-between align-items-center  "> 
-                    
-                    <a class="text-decoration-none text-dark  col-lg-7 col-md-4 col-sm-4 " data-bs-toggle="collapse" href="#multiCollapseExample4"
-                  role="button" aria-expanded="true" aria-controls="multiCollapseExample4"> MI PERFIL
 
-                    
-                  </a>
 
-                  <div class="col-lg-3 col-md-5 col-sm-2 text-end  " type="button" data-bs-toggle="collapse" href="#multiCollapseExample4"
-                  role="button" aria-expanded="true style="text-decoration:none;color:gray; padding-top: 10px" >
-                    <i class="fa fa-chevron-down fs-4" ></i>
-                  </div>                  
-                  </div>
+              <div class="row justify-content-between align-items-center  ">
 
-              
+                <a class="text-decoration-none text-dark  col-lg-7 col-md-4 col-sm-4 " data-bs-toggle="collapse"
+                  href="#multiCollapseExample4" role="button" aria-expanded="true"
+                  aria-controls="multiCollapseExample4"> MI PERFIL
+
+
+                </a>
+
+                <div class="col-lg-3 col-md-5 col-sm-2 text-end  " type="button" data-bs-toggle="collapse"
+                  href="#multiCollapseExample4" role="button" aria-expanded="true style="
+                  text-decoration:none;color:gray; padding-top: 10px">
+                  <i class="fa fa-chevron-down fs-4"></i>
+                </div>
+              </div>
+
+
               <div class="row ">
                 <div class="col">
-                  
+
                   <div class="collapse multi-collapse show  " id="multiCollapseExample4">
-                    
+
 
                     <!-- START  -->
 
@@ -458,16 +460,16 @@
                         <div class="col-md-12 ">
                           <div class="profile-sidebar  rounded-3 ">
                             <!-- SIDEBAR USERPIC -->
-                            <div class=" image-profile " >
+                            <div class=" image-profile ">
                               <a href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
-                              <img src="../assets/user-profile-2-removebg-preview.png" class="img-responsive user-profile " alt="imagen user"
-                               style=" width: 100%; " />
+                              <img src=" ../assets/user-profile-2-removebg-preview.png"
+                                class="img-responsive user-profile " alt="imagen user" style=" width: 100%; " />
                               </a>
                             </div>
                             <!-- END SIDEBAR USERPIC -->
                             <!-- SIDEBAR USER TITLE -->
                             <div class="profile-usertitle">
-                              
+
                               <p><strong>Nombre:</strong>
                               <p id="NombreU">fss</p>
                               </p>
@@ -479,65 +481,90 @@
 
 
                             <div class="profile-userbuttons row justify-content-center  py-3  g-2  ">
-                              <button type="button" class="col-lg-4 col-md-6 col-sm-5 btn btn-success btn-sm text-center align-items-center" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
+                              <button type="button"
+                                class="col-lg-4 col-md-6 col-sm-5 btn btn-success btn-sm text-center align-items-center"
+                                data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
                                 Editar
                               </button>
 
 
-                              <a href="./cerrando.html"  
-                                 class="btn-sm col-lg-5 col-md-6 col-sm-5  btn btn-danger border border-dark-subtle" type="button ">
-                                  Cerrar sesión
-                              </button>
-                            </a> 
+                              <a href="./cerrando.html"
+                                class="btn-sm col-lg-5 col-md-6 col-sm-5  btn btn-danger border border-dark-subtle"
+                                type="button ">
+                                Cerrar sesión
+                                </button>
+                              </a>
                             </div>
 
                             <!-- Modal Editar Perfil -->
-  <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="modalEditarPerfilLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered center ">
-      <div class="modal-content  rounded-3 ">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalEditarPerfilLabel">Editar Perfil</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Formulario de edición de perfil -->
-          <form>
-            <div class="mb-3">
-              <label for="nombrePerfil" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombrePerfil" placeholder="Tu nombre">
-            </div>
-            <div class="mb-3">
-              <label for="emailPerfil" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="emailPerfil" placeholder="tu@email.com">
-            </div>
-            <!-- Selección de imagen de perfil -->
-            <div class="mb-3">
-              <label class="form-label">Imagen de perfil</label>
-              <div class="d-flex gap-3 justify-content-center align-items-center flex-wrap">
-                <img src="../assets/user-profile-2-removebg-preview.png" id="imgPerfilActual" class="img-thumbnail perfil-opcion" data-img="../assets/user-profile-2-removebg-preview.png" style="width: 80px; cursor:pointer; border: 2px solid #0dcaf0;" title="Actual">
-                <img src="../assets/abeja peque.png" id="imgPerfilFemenino" class="img-thumbnail perfil-opcion" data-img="../assets/abeja peque.png" style="width: 80px; cursor:pointer;" title="Femenino">
-                <img src="../assets/araña-robot.png" id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion" data-img="../assets/araña-robot.png" style="width: 80px; cursor:pointer;" title="Aleatorio">
-                <img src="../assets/FANTASMA1.png" id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion" data-img="../assets/FANTASMA1.png" style="width: 80px; cursor:pointer;" title="Aleatorio">
-                <img src="../assets/2-personaje.png" id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion" data-img="../assets/2-personaje.png" style="width: 80px; cursor:pointer;" title="Aleatorio">
-                <img src="../assets/user-profile-2-removebg-preview.png" id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion" data-img="../assets/user-profile-2-removebg-preview.png" style="width: 80px; cursor:pointer;" title="Aleatorio">
-              </div>
-              <div class="container justify-content-center text-center">
-                <small class="text-muted   m-auto ">Haz clic en una imagen para seleccionarla como tu perfil.</small>
-                
-              </div>
-              
-            </div>
-            <!-- Puedes agregar más campos aquí si lo necesitas -->
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCancelarCambiosPerfil">Cancelar</button>
-          <button type="button" class="btn btn-primary" id="btnGuardarCambiosPerfil">Guardar cambios</button>
-        </div>
-      </div>
-    </div>
-  </div>
-                  
+                            <div class="modal fade" id="modalEditarPerfil" tabindex="-1"
+                              aria-labelledby="modalEditarPerfilLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg modal-dialog-centered center ">
+                                <div class="modal-content  rounded-3 ">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalEditarPerfilLabel">Editar Perfil</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Cerrar"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <!-- Formulario de edición de perfil -->
+                                    <form>
+                                      <div class="mb-3">
+                                        <label for="nombrePerfil" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombrePerfil"
+                                          placeholder="Tu nombre">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="emailPerfil" class="form-label">Correo electrónico</label>
+                                        <input type="email" class="form-control" id="emailPerfil"
+                                          placeholder="tu@email.com">
+                                      </div>
+                                      <!-- Selección de imagen de perfil -->
+                                      <div class="mb-3">
+                                        <label class="form-label">Imagen de perfil</label>
+                                        <div class="d-flex gap-3 justify-content-center align-items-center flex-wrap">
+                                          <img src="../assets/user-profile-2-removebg-preview.png" id="imgPerfilActual"
+                                            class="img-thumbnail perfil-opcion"
+                                            data-img="../assets/user-profile-2-removebg-preview.png"
+                                            style="width: 80px; cursor:pointer; border: 2px solid #0dcaf0;"
+                                            title="Actual">
+                                          <img src="../assets/abeja peque.png" id="imgPerfilFemenino"
+                                            class="img-thumbnail perfil-opcion" data-img="../assets/abeja peque.png"
+                                            style="width: 80px; cursor:pointer;" title="Femenino">
+                                          <img src="../assets/araña-robot.png" id="imgPerfilAleatorio"
+                                            class="img-thumbnail perfil-opcion" data-img="../assets/araña-robot.png"
+                                            style="width: 80px; cursor:pointer;" title="Aleatorio">
+                                          <img src="../assets/FANTASMA1.png" id="imgPerfilAleatorio"
+                                            class="img-thumbnail perfil-opcion" data-img="../assets/FANTASMA1.png"
+                                            style="width: 80px; cursor:pointer;" title="Aleatorio">
+                                          <img src="../assets/2-personaje.png" id="imgPerfilAleatorio"
+                                            class="img-thumbnail perfil-opcion" data-img="../assets/2-personaje.png"
+                                            style="width: 80px; cursor:pointer;" title="Aleatorio">
+                                          <img src="../assets/user-profile-2-removebg-preview.png"
+                                            id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion"
+                                            data-img="../assets/user-profile-2-removebg-preview.png"
+                                            style="width: 80px; cursor:pointer;" title="Aleatorio">
+                                        </div>
+                                        <div class="container justify-content-center text-center">
+                                          <small class="text-muted   m-auto ">Haz clic en una imagen para seleccionarla
+                                            como tu perfil.</small>
+
+                                        </div>
+
+                                      </div>
+                                      <!-- Puedes agregar más campos aquí si lo necesitas -->
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                      id="btnCancelarCambiosPerfil">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" id="btnGuardarCambiosPerfil">Guardar
+                                      cambios</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
 
 
                           </div>
@@ -554,16 +581,18 @@
 
             </li>
 
-            <li class="list-group-item py-3 rounded-2   "><a class="text-decoration-none text-primary nav-link " href="#"
-              data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">MI AVANCE </a>
-          </li>
+            <li class="list-group-item py-3 rounded-2   "><a class="text-decoration-none text-primary nav-link "
+                href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">MI
+                AVANCE </a>
+            </li>
 
-            
+
             <!-- collapse estudiantes -->
             <li class="list-group-item rounded-3">
               <p class="d-inline-flex gap-1 w-100">
-                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample1"
-                  role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Estudiantes</a>
+                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse"
+                  href="#multiCollapseExample1" role="button" aria-expanded="false"
+                  aria-controls="multiCollapseExample1">Estudiantes</a>
 
               </p>
               <div class="row  ">
@@ -584,8 +613,9 @@
             <li class="list-group-item rounded-3">
 
               <p class="d-inline-flex gap-1 w-100">
-                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample2"
-                  role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Instructores online</a>
+                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse"
+                  href="#multiCollapseExample2" role="button" aria-expanded="false"
+                  aria-controls="multiCollapseExample2">Instructores online</a>
 
               </p>
               <div class="row  ">
@@ -607,8 +637,9 @@
 
             <li class="list-group-item">
               <p class="d-inline-flex gap-1 w-100">
-                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample6"
-                  role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Contacto </a>
+                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse"
+                  href="#multiCollapseExample6" role="button" aria-expanded="false"
+                  aria-controls="multiCollapseExample1">Contacto </a>
 
               </p>
               <div class="row  ">
@@ -659,7 +690,7 @@
 
           </ul>
 
-          
+
         </div>
 
       </div>
@@ -678,11 +709,13 @@
           <div class="card mb-3 ">
             <div class="card-header p-0 ">
 
-              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center col-lg-12 col-sm-12 " >
+              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center col-lg-12 col-sm-12 ">
                 <span class="col-lg-4  ">
                   <a href="./estilos.html" class="btn btn-primary rounded-2 text-white">MÓDULO:ESTILOS</a>
                 </span>
-                <span class="col-lg-8 col-md-8 col-sm-8  p-2 text-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEstilos" aria-expanded="true" aria-controls="collapseEstilos" style="text-decoration:none;" >
+                <span class="col-lg-8 col-md-8 col-sm-8  p-2 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseEstilos" aria-expanded="true" aria-controls="collapseEstilos"
+                  style="text-decoration:none;">
                   <i class="fa fa-chevron-down fs-2 " id="chevronEstilos"></i>
                 </span>
               </div>
@@ -696,9 +729,11 @@
                     <div class="parrafos p-4 col-lg-8 col-sm-12  order-lg-1 ">
                       <p class="card-text col-lg-8 col-sm-12 ">Descripción breve.</p>
                       <p class="card-text col-lg-8 col-sm-12 ">
-                        Explora los estilos visuales y narrativos que definen la atmósfera y el lenguaje de una producción cinematográfica.
+                        Explora los estilos visuales y narrativos que definen la atmósfera y el lenguaje de una
+                        producción cinematográfica.
 
-Aprende cómo la dirección de arte, la fotografía y el diseño de producción contribuyen a la identidad visual de una película, generando emociones y significado en cada escena.
+                        Aprende cómo la dirección de arte, la fotografía y el diseño de producción contribuyen a la
+                        identidad visual de una película, generando emociones y significado en cada escena.
 
 
 
@@ -736,11 +771,13 @@ Aprende cómo la dirección de arte, la fotografía y el diseño de producción 
 
           <div class="card mb-3">
             <div class="card-header p-0">
-              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center" >
+              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center">
                 <span class="col-3">
                   <a href="./guiones.html" class="btn btn-primary rounded-2 text-white">MÓDULO:GUIONES</a>
                 </span>
-                <span class="col-9 p-2 text-end  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuiones" aria-expanded="false" aria-controls="collapseGuiones" style="text-decoration:none;" >
+                <span class="col-9 p-2 text-end  " type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseGuiones" aria-expanded="false" aria-controls="collapseGuiones"
+                  style="text-decoration:none;">
                   <i class="fa fa-chevron-down fs-2" id="chevronGuiones"></i>
                 </span>
               </div>
@@ -754,7 +791,8 @@ Aprende cómo la dirección de arte, la fotografía y el diseño de producción 
                       <p class="card-text col-lg-12 ">
                         Descubre la importancia del guion como hoja de ruta para la producción audiovisual.
 
-Conoce técnicas para estructurar historias, desarrollar personajes y plasmar ideas en un formato profesional, facilitando la organización y el rodaje de tu proyecto cinematográfico.
+                        Conoce técnicas para estructurar historias, desarrollar personajes y plasmar ideas en un formato
+                        profesional, facilitando la organización y el rodaje de tu proyecto cinematográfico.
 
 
 
@@ -790,11 +828,13 @@ Conoce técnicas para estructurar historias, desarrollar personajes y plasmar id
 
           <div class="card mb-3">
             <div class="card-header p-0">
-              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center" >
+              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center">
                 <span class="col-lg-4 ">
                   <a href="./produccion.html" class="btn btn-primary rounded-2 text-white">MÓDULO: PRODUCCIÓN</a>
                 </span>
-                <span class="col-5  p-2 text-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProduccion" aria-expanded="false" aria-controls="collapseProduccion" style="text-decoration:none;" >
+                <span class="col-5  p-2 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseProduccion" aria-expanded="false" aria-controls="collapseProduccion"
+                  style="text-decoration:none;">
                   <i class="fa fa-chevron-down fs-2" id="chevronProduccion"></i>
                 </span>
               </div>
@@ -808,7 +848,8 @@ Conoce técnicas para estructurar historias, desarrollar personajes y plasmar id
                       <p class="card-text col-12 ">
                         Adéntrate en la organización, planificación y ejecución de un rodaje cinematográfico.
 
-Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para transformar un guion en una producción audiovisual exitosa.
+                        Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para transformar un guion
+                        en una producción audiovisual exitosa.
 
 
 
@@ -844,11 +885,13 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
 
           <div class="card mb-3">
             <div class="card-header p-0">
-              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center" >
+              <div class="btn btn-link w-100 d-flex justify-content-between align-items-center">
                 <span class="col-3">
                   <a href="./edicion.html" class="btn btn-primary rounded-2 text-white">MÓDULO:EDICIÓN</a>
                 </span>
-                <span class="col-9  p-2 text-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdicion" aria-expanded="false" aria-controls="collapseEdicion" style="text-decoration:none;" >
+                <span class="col-9  p-2 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseEdicion" aria-expanded="false" aria-controls="collapseEdicion"
+                  style="text-decoration:none;">
                   <i class="fa fa-chevron-down fs-2" id="chevronEdicion"></i>
                 </span>
               </div>
@@ -862,9 +905,10 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
                       <p class="card-text col-12 ">
                         Descubre el arte de la edición y la postproducción en el cine.
 
-                        Conoce cómo seleccionar, unir y mejorar las tomas para construir el ritmo, la narrativa y el impacto emocional de tu película.
-                        
-                        
+                        Conoce cómo seleccionar, unir y mejorar las tomas para construir el ritmo, la narrativa y el
+                        impacto emocional de tu película.
+
+
 
 
 
@@ -911,49 +955,51 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
           <ul class="list-group my-2   ">
             <!-- <li class="list-group-item">CERTIFICADOS</li> -->
 
-            
 
-            
+
+
 
             <!-- collapse salir - configurar -->
             <li class="list-group-item rounded-3">
               <p class="d-inline-flex gap-1 w-100">
-                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample6"
-                  role="button" aria-expanded="false" aria-controls="multiCollapseExample1">SALIR</a>
+                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse"
+                  href="#multiCollapseExample6" role="button" aria-expanded="false"
+                  aria-controls="multiCollapseExample1">SALIR</a>
 
               </p>
-              
-                
 
-                <div class="collapse multi-collapse " id="multiCollapseExample6">
-                  <div class="container  ">
-                    <div class=" row  justify-content-center py-1 gap-1 ">
 
-                      
-                     
-                      <button type="button" class=" col-sm-12 col-lg-5  btn btn-success btn-sm rounded-2 "
-                       data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
+
+              <div class="collapse multi-collapse " id="multiCollapseExample6">
+                <div class="container  ">
+                  <div class=" row  justify-content-center py-1 gap-1 ">
+
+
+
+                    <button type="button" class=" col-sm-12 col-lg-5  btn btn-success btn-sm rounded-2 "
+                      data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
                         Editar
                       </button>
 
-                      <a href="./cerrando.html" class="col-lg-5 col-sm-12 btn btn-dark  rounded-2 p-3">
-                      
-                        Cerrar sesión
-                      
+                      <a href=" ./cerrando.html" class="col-lg-5 col-sm-12 btn btn-dark  rounded-2 p-3">
+
+                      Cerrar sesión
+
                       </a>
 
-                    </div>
                   </div>
                 </div>
+              </div>
 
             </li>
 
 
-            
+
             <li class="list-group-item">
               <p class="d-inline-flex gap-1 w-100">
-                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample3"
-                  role="button" aria-expanded="false" aria-controls="multiCollapseExample3">REPORTES</a>
+                <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse"
+                  href="#multiCollapseExample3" role="button" aria-expanded="false"
+                  aria-controls="multiCollapseExample3">REPORTES</a>
 
               </p>
               <div class="row  ">
@@ -1037,7 +1083,8 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
                         </iframe>
                       </div>
                       <div class="modal-footer">
-                        <a href="https://archive.org/embed/ellibrodelcine0000unse" class="btn btn-success" target="_blank" rel="noopener noreferrer">
+                        <a href="https://archive.org/embed/ellibrodelcine0000unse" class="btn btn-success"
+                          target="_blank" rel="noopener noreferrer">
                           <i class="fa-solid fa-download me-2"></i>Descargar publicación
                         </a>
 
@@ -1067,11 +1114,12 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
                       <div class="modal-body">
                         <img class="col-lg-12 col-md-12 col-12"
                           src="https://www.pictoline.com/imgs/2021/05/04/CDusnfPbSHETY0CpFkzjSVaWeYUNB2ywYfEqdJ61.png"
-                          alt="infofraphic-pictoline" >
+                          alt="infofraphic-pictoline">
 
                       </div>
                       <div class="modal-footer">
-                        <a href="https://www.pictoline.com/imgs/2021/05/04/CDusnfPbSHETY0CpFkzjSVaWeYUNB2ywYfEqdJ61.png" class="btn btn-success" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.pictoline.com/imgs/2021/05/04/CDusnfPbSHETY0CpFkzjSVaWeYUNB2ywYfEqdJ61.png"
+                          class="btn btn-success" target="_blank" rel="noopener noreferrer">
                           <i class="fa-solid fa-download me-2"></i>Descargar Guión
                         </a>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -1098,13 +1146,14 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <img class="col-lg-12 col-md-12 col-12" 
+                        <img class="col-lg-12 col-md-12 col-12"
                           src="https://digitalsynopsis.com/wp-content/uploads/2017/02/film-movies-color-psychology-infographic.jpg"
                           alt="">
                       </div>
                       <div class="modal-footer">
 
-                        <a href="https://digitalsynopsis.com/wp-content/uploads/2017/02/film-movies-color-psychology-infographic.jpg" download="infografia-produccion.jpg" class="btn btn-success" target="_blank">
+                        <a href="https://digitalsynopsis.com/wp-content/uploads/2017/02/film-movies-color-psychology-infographic.jpg"
+                          download="infografia-produccion.jpg" class="btn btn-success" target="_blank">
                           <i class="fa-solid fa-download me-2"></i>Descargar Infografía
                         </a>
 
@@ -1132,8 +1181,9 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <iframe  src="https://www.slideshare.net/slideshow/embed_code/key/BzfBiXeiEnMrx9?startSlide=1"
-                          class="col-lg-11 col-lg-12 col-md-12 col-12" height="506" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+                        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/BzfBiXeiEnMrx9?startSlide=1"
+                          class="col-lg-11 col-lg-12 col-md-12 col-12" height="506" frameborder="0" marginwidth="0"
+                          marginheight="0" scrolling="no"
                           style="border:1px solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;"
                           allowfullscreen>
                         </iframe>
@@ -1146,7 +1196,8 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
 
                       </div>
                       <div class="modal-footer">
-                        <a href="https://es.slideshare.net/slideshow/edicion-de-videos/73107787" download class="btn btn-success" target="_blank">
+                        <a href="https://es.slideshare.net/slideshow/edicion-de-videos/73107787" download
+                          class="btn btn-success" target="_blank">
                           <i class="fa-solid fa-download me-2"></i>Descargar
                         </a>
                         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
@@ -1259,7 +1310,7 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  
+
 
 </body>
 
