@@ -293,10 +293,59 @@
             
                 <!-- Contenedor de Publicaciones -->
                 <div id="contenedorPublicaciones" class="row row-cols-1 row-cols-md-2 g-4">
+                    <!-- Modal XL para la primera card -->
+                    <div class="modal fade " id="modalCard1" tabindex="-1" aria-labelledby="modalCard1Label" aria-hidden="true">
+                      <div class="modal-dialog  modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalCard1Label">La animación digital: retos y avances</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                          </div>
+                          <div class="modal-body  py-4  d-flex justify-content-center" style="max-height:70vh; overflow-y:auto; font-size: 24px;">
+                            <div style="width:80%; text-align:justify;">
+                              <p>
+                                La animación digital ha revolucionado la manera en que se cuentan historias, se transmiten ideas y se crean mundos imaginarios. Desde sus inicios, la animación ha sido un campo en constante evolución, enfrentando retos técnicos, artísticos y narrativos. En la actualidad, la animación digital se ha consolidado como una de las industrias más dinámicas y creativas, abarcando desde el cine y la televisión hasta los videojuegos, la publicidad y la educación.
+                              </p>
+                              <p>
+                                Uno de los principales retos de la animación digital es la rápida evolución de la tecnología. Los profesionales deben mantenerse actualizados con las últimas herramientas y técnicas, lo que implica una formación continua y una gran capacidad de adaptación. Además, la competencia global exige altos estándares de calidad y originalidad, lo que motiva a los estudios y artistas a innovar constantemente.
+                              </p>
+                              <p>
+                                La narrativa en la animación digital también ha experimentado avances significativos. Hoy en día, los creadores pueden explorar temáticas complejas y profundas, abordando cuestiones sociales, filosóficas y emocionales con una libertad creativa sin precedentes. La animación permite representar realidades alternativas, mundos fantásticos y personajes imposibles, ampliando los límites de la imaginación humana.
+                              </p>
+                              <p>
+                                Otro aspecto fundamental es la colaboración interdisciplinaria. La animación digital reúne a artistas, programadores, guionistas, músicos y especialistas en efectos visuales, entre otros. Esta sinergia de talentos enriquece el proceso creativo y da lugar a obras de gran complejidad y belleza. Sin embargo, coordinar equipos multidisciplinarios puede ser un desafío, especialmente en proyectos de gran escala.
+                              </p>
+                              <p>
+                                En cuanto a los avances, la inteligencia artificial y el aprendizaje automático están comenzando a transformar la animación digital. Estas tecnologías permiten automatizar tareas repetitivas, mejorar la simulación de movimientos y generar efectos visuales más realistas. Asimismo, la realidad virtual y aumentada abren nuevas posibilidades para la interacción y la inmersión del espectador, creando experiencias únicas y personalizadas.
+                              </p>
+                              <p>
+                                La accesibilidad es otro avance importante. Hoy en día, existen herramientas y plataformas que permiten a cualquier persona interesada iniciarse en la animación digital, independientemente de su nivel de experiencia. Esto ha democratizado el acceso a la creación audiovisual y ha dado voz a nuevas generaciones de artistas y narradores.
+                              </p>
+                              <p>
+                                No obstante, la animación digital también enfrenta retos éticos y sociales. La representación de la diversidad, el respeto a los derechos de autor y la protección de los datos personales son cuestiones que requieren atención y responsabilidad por parte de los creadores y las empresas del sector.
+                              </p>
+                              <p>
+                                En conclusión, la animación digital es un campo apasionante y en constante transformación. Sus retos impulsan la innovación y el crecimiento profesional, mientras que sus avances abren nuevas fronteras para la creatividad y la comunicación. El futuro de la animación digital promete ser aún más sorprendente, con historias y experiencias que seguirán cautivando a audiencias de todo el mundo.
+                              </p>
+                              <p class="py-4">
+                                <strong>Referencias:</strong><br>
+                                - "The Animation Guild. (2022). Animation Industry Overview."<br>
+                                - "Williams, R. (2012). The Animator's Survival Kit. Faber & Faber."<br>
+                                - "Thomas, F. & Johnston, O. (1995). The Illusion of Life: Disney Animation. Disney Editions."
+                              </p>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Fin Modal XL para la primera card -->
                     <!-- Card 1 -->
                     <div class="col">
                         <div class="news-card h-100">
-                            <div class="news-image primera">
+                            <div class="news-image primera" data-bs-toggle="modal" data-bs-target="#modalCard1" style="cursor:pointer;">
                                 <img src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                                 alt="" class="img-fluid">
                             </div>
@@ -306,7 +355,7 @@
                                     <span>Admin</span>
                                     <span class="news-rating">★★★★★</span>
                                 </div>
-                                <h5 class="news-title">La animación digital: retos y avances</h5>
+                                <h5 class="news-title"><a href="#" data-bs-toggle="modal" data-bs-target="#modalCard1">La animación digital: retos y avances </a></h5>
                                 <p class="text-muted">Descubre el mundo de la animación.</p>
                             </div>
                         </div>
@@ -322,7 +371,7 @@
                                     <span>Admin</span>
                                     <span class="news-rating">★★★★☆</span>
                                 </div>
-                                <h5 class="news-title">Nuestra lista de mejores películas</h5>
+                                <h5 class="news-title"><a href="#">Nuestra lista de mejores películas</a></h5>
                                 <p class="text-muted">Conoce las mejores películas de este año.</p>
                             </div>
                         </div>
@@ -338,7 +387,7 @@
                                     <span>Admin</span>
                                     <span class="news-rating">★★★★☆</span>
                                 </div>
-                                <h5 class="news-title">Nuestra lista de mejores películas</h5>
+                                <h5 class="news-title"><a href="#">Nuestra lista de mejores películas</a></h5>
                                 <p class="text-muted">Conoce las mejores películas de este año.</p>
                             </div>
                         </div>
@@ -357,7 +406,7 @@
                                     <span>Carlos Rodríguez</span>
                                     <span class="news-rating">★★★★★</span>
                                 </div>
-                                <h5 class="news-title">Técnicas avanzadas de storyboarding</h5>
+                                <h5 class="news-title"><a href="#">Técnicas avanzadas de storyboarding</a></h5>
                                 <p class="text-muted">Aprende las mejores prácticas para crear storyboards profesionales.</p>
                             </div>
                         </div>
@@ -376,7 +425,7 @@
                                     <span>María González</span>
                                     <span class="news-rating">★★★★☆</span>
                                 </div>
-                                <h5 class="news-title">Efectos visuales en la era digital</h5>
+                                <h5 class="news-title"><a href="#">Efectos visuales en la era digital</a></h5>
                                 <p class="text-muted">Explora las últimas tendencias en efectos visuales y post-producción.</p>
                             </div>
                         </div>
@@ -395,7 +444,7 @@
                                     <span>Andrés López</span>
                                     <span class="news-rating">★★★★★</span>
                                 </div>
-                                <h5 class="news-title">Guión cinematográfico: estructura y narrativa</h5>
+                                <h5 class="news-title"><a href="#">Guión cinematográfico: estructura y narrativa</a></h5>
                                 <p class="text-muted">Descubre los secretos para escribir guiones que cautiven a la audiencia.</p>
                             </div>
                         </div>
@@ -414,7 +463,7 @@
                                     <span>Ana Martínez</span>
                                     <span class="news-rating">★★★★☆</span>
                                 </div>
-                                <h5 class="news-title">Iluminación en animación 3D</h5>
+                                <h5 class="news-title"><a href="#">Iluminación en animación 3D</a></h5>
                                 <p class="text-muted">Técnicas profesionales para crear ambientes únicos en tus proyectos 3D.</p>
                             </div>
                         </div>
