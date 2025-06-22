@@ -18,11 +18,20 @@ for (let i = 0; i < user.length; i++) {
 document.addEventListener("DOMContentLoaded", function () {
     const nombre1 = document.querySelector("#NombreU");
     const nombre = document.querySelector("#NombreUser");
+    const imagenesPerfil = document.querySelectorAll('.user-profile');
+    
     for (let i = 0; i < user.length; i++) {
       
       if (user[i].logged) {
         nombre.textContent = `${user[i].userName}`;
         nombre1.textContent = `${user[i].userName}`;
+        
+        // Cargar imagen de perfil del usuario si existe
+        if (user[i].profileImage) {
+            imagenesPerfil.forEach(img => img.src = user[i].profileImage);
+            console.log('Imagen de perfil cargada para:', user[i].userName, 'URL:', user[i].profileImage);
+        }
+        
         return
       }
   
@@ -152,16 +161,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let originalSrc = '';
     let seleccionActualSrc = '';
 
-    // Cargar imagen de perfil desde localStorage al iniciar
-    const savedImgSrc = localStorage.getItem('profileImage');
-    if (savedImgSrc) {
-        imagenesPerfil.forEach(img => img.src = savedImgSrc);
+    // Función para obtener el usuario logueado
+    function getUsuarioLogueado() {
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        return usuarios.find(usuario => usuario.logged);
+    }
+
+    // Función para actualizar el usuario en localStorage
+    function actualizarUsuarioEnStorage(usuarioActualizado) {
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        const index = usuarios.findIndex(u => u.userName === usuarioActualizado.userName);
+        if (index !== -1) {
+            usuarios[index] = usuarioActualizado;
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        }
     }
 
     modalEditarPerfil.addEventListener('show.bs.modal', () => {
-        originalSrc = imagenesPerfil[0].src;
+        const usuarioLogueado = getUsuarioLogueado();
+        if (usuarioLogueado && usuarioLogueado.profileImage) {
+            originalSrc = usuarioLogueado.profileImage;
+        } else {
+            originalSrc = imagenesPerfil[0].src;
+        }
         seleccionActualSrc = originalSrc;
         
+        // Marcar la opción seleccionada actualmente
         opcionesPerfil.forEach(opcion => {
             if (opcion.getAttribute('data-img') === originalSrc) {
                 opcion.style.border = '2px solid #0dcaf0';
@@ -182,8 +207,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnGuardar.addEventListener('click', () => {
-        imagenesPerfil.forEach(img => img.src = seleccionActualSrc);
-        localStorage.setItem('profileImage', seleccionActualSrc);
+        const usuarioLogueado = getUsuarioLogueado();
+        if (usuarioLogueado) {
+            // Actualizar la imagen en todas las instancias
+            imagenesPerfil.forEach(img => img.src = seleccionActualSrc);
+            
+            // Guardar la imagen en el objeto del usuario
+            usuarioLogueado.profileImage = seleccionActualSrc;
+            actualizarUsuarioEnStorage(usuarioLogueado);
+            
+            console.log('Imagen de perfil guardada para:', usuarioLogueado.userName);
+            console.log('URL de la imagen guardada:', seleccionActualSrc);
+            console.log('Usuario actualizado:', usuarioLogueado);
+        } else {
+            console.error('No se encontró usuario logueado');
+        }
+        
         const modalInstance = bootstrap.Modal.getInstance(modalEditarPerfil);
         modalInstance.hide();
     });
