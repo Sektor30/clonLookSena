@@ -44,6 +44,19 @@
         .dropdown-toggle{
           color: #06aefc;
         }
+
+        /* Estilos para botones activos del sidebar */
+        .sidebar .btn.active {
+          background-color: #0056b3;
+          border-color: #0056b3;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          transform: scale(1.05);
+        }
+
+        .sidebar .btn.active:hover {
+          background-color: #004085;
+          border-color: #004085;
+        }
       </style>
 
   </head>
@@ -205,10 +218,10 @@
                 <div class="d-flex flex-column p-3">
                     <h3 class="text-center mb-4">Categorías</h3>
                     <div class="d-grid gap-3">
-                        <button class="btn btn-primary btn-lg">
+                        <button class="btn btn-primary btn-lg" id="btnPublicaciones">
                             <i class="fas fa-newspaper me-2"></i>Publicaciones
                         </button>
-                        <button class="btn btn-primary btn-lg">
+                        <button class="btn btn-primary btn-lg" id="btnRevistas">
                             <i class="fas fa-book me-2"></i>Revista
                         </button>
                     </div>
@@ -219,7 +232,8 @@
             <div class="col-md-9">
                 <h1 class="section-title text-center animate__animated animate__backInDown animate__tada">Nuestro blog</h1>
             
-                <div class="row row-cols-1 row-cols-md-2 g-4">
+                <!-- Contenedor de Publicaciones -->
+                <div id="contenedorPublicaciones" class="row row-cols-1 row-cols-md-2 g-4">
                     <!-- Card 1 -->
                     <div class="col">
                         <div class="news-card h-100">
@@ -347,6 +361,18 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Contenedor de Revistas (inicialmente oculto) -->
+                <div id="contenedorRevistas" class="container" style="display: none;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <h4>Sección de Revistas</h4>
+                                <p>Contenido de revistas próximamente...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -405,6 +431,44 @@
    
      <script src="../js/validarUsuario.js"></script>
 
+     <script>
+        // Funcionalidad dinámica para el sidebar de noticias
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Obtener referencias a los elementos
+            const btnPublicaciones = document.getElementById('btnPublicaciones');
+            const btnRevistas = document.getElementById('btnRevistas');
+            const contenedorPublicaciones = document.getElementById('contenedorPublicaciones');
+            const contenedorRevistas = document.getElementById('contenedorRevistas');
+
+            // Función para mostrar publicaciones
+            function mostrarPublicaciones() {
+                contenedorPublicaciones.style.display = 'flex';
+                contenedorRevistas.style.display = 'none';
+                
+                // Actualizar estilos de los botones
+                btnPublicaciones.classList.add('active');
+                btnRevistas.classList.remove('active');
+            }
+
+            // Función para mostrar revistas
+            function mostrarRevistas() {
+                contenedorPublicaciones.style.display = 'none';
+                contenedorRevistas.style.display = 'block';
+                
+                // Actualizar estilos de los botones
+                btnRevistas.classList.add('active');
+                btnPublicaciones.classList.remove('active');
+            }
+
+            // Event listeners para los botones
+            btnPublicaciones.addEventListener('click', mostrarPublicaciones);
+            btnRevistas.addEventListener('click', mostrarRevistas);
+
+            // Mostrar publicaciones por defecto al cargar la página
+            mostrarPublicaciones();
+        });
+     </script>
 
     
 </body>
