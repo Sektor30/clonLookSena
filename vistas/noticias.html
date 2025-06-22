@@ -57,6 +57,42 @@
           background-color: #004085;
           border-color: #004085;
         }
+
+        /* Estilos para las listas colapsables */
+        .sidebar .collapse .card {
+          border: 1px solid #dee2e6;
+          border-radius: 0.375rem;
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        .sidebar .collapse .card-body {
+          padding: 0.75rem;
+        }
+
+        .sidebar .collapse ul li {
+          border-bottom: 1px solid #f8f9fa;
+          padding: 0.5rem 0;
+        }
+
+        .sidebar .collapse ul li:last-child {
+          border-bottom: none;
+        }
+
+        .sidebar .collapse ul li a {
+          color: #495057;
+          font-size: 0.9rem;
+          transition: color 0.2s ease;
+        }
+
+        .sidebar .collapse ul li a:hover {
+          color: #0056b3;
+          font-weight: 500;
+        }
+
+        /* Animación suave para el collapse */
+        .collapse {
+          transition: all 0.3s ease;
+        }
       </style>
 
   </head>
@@ -218,12 +254,35 @@
                 <div class="d-flex flex-column p-3">
                     <h3 class="text-center mb-4">Categorías</h3>
                     <div class="d-grid gap-3">
-                        <button class="btn btn-primary btn-lg" id="btnPublicaciones">
+                        <button class="btn btn-primary btn-lg" id="btnPublicaciones" data-bs-toggle="collapse" data-bs-target="#listaPublicaciones" aria-expanded="false" aria-controls="listaPublicaciones">
                             <i class="fas fa-newspaper me-2"></i>Publicaciones
                         </button>
-                        <button class="btn btn-primary btn-lg" id="btnRevistas">
+                        <div class="collapse" id="listaPublicaciones">
+                            <div class="card card-body mt-2">
+                                <ul class="list-unstyled text-center mb-0">
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">La animación digital: retos y avances</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Nuestra lista de mejores películas</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Nuestra lista de mejores películas</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Técnicas avanzadas de storyboarding</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Efectos visuales en la era digital</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Guión cinematográfico: estructura y narrativa</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Iluminación en animación 3D</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-lg" id="btnRevistas" data-bs-toggle="collapse" data-bs-target="#listaRevistas" aria-expanded="false" aria-controls="listaRevistas">
                             <i class="fas fa-book me-2"></i>Revista
                         </button>
+                        <div class="collapse" id="listaRevistas">
+                            <div class="card card-body mt-2">
+                                <ul class="list-unstyled text-center mb-0">
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Revista Digital #1</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Revista Digital #2</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Revista Digital #3</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -461,9 +520,63 @@
                 btnPublicaciones.classList.remove('active');
             }
 
-            // Event listeners para los botones
-            btnPublicaciones.addEventListener('click', mostrarPublicaciones);
-            btnRevistas.addEventListener('click', mostrarRevistas);
+            // Event listeners para los botones principales
+            btnPublicaciones.addEventListener('click', function(e) {
+                // Si el botón ya está activo, solo manejar el collapse
+                if (!btnPublicaciones.classList.contains('active')) {
+                    mostrarPublicaciones();
+                }
+            });
+
+            btnRevistas.addEventListener('click', function(e) {
+                // Si el botón ya está activo, solo manejar el collapse
+                if (!btnRevistas.classList.contains('active')) {
+                    mostrarRevistas();
+                }
+            });
+
+            // Event listeners para los enlaces de la lista de publicaciones
+            const enlacesPublicaciones = document.querySelectorAll('#listaPublicaciones a');
+            enlacesPublicaciones.forEach((enlace, index) => {
+                enlace.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Mostrar publicaciones si no están visibles
+                    if (contenedorPublicaciones.style.display === 'none') {
+                        mostrarPublicaciones();
+                    }
+                    
+                    // Aquí puedes agregar lógica para scroll hacia la card específica
+                    console.log(`Clic en: ${this.textContent} (índice: ${index})`);
+                    
+                    // Opcional: cerrar el collapse después del clic
+                    const collapse = bootstrap.Collapse.getInstance(document.getElementById('listaPublicaciones'));
+                    if (collapse) {
+                        collapse.hide();
+                    }
+                });
+            });
+
+            // Event listeners para los enlaces de la lista de revistas
+            const enlacesRevistas = document.querySelectorAll('#listaRevistas a');
+            enlacesRevistas.forEach((enlace, index) => {
+                enlace.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Mostrar revistas si no están visibles
+                    if (contenedorRevistas.style.display === 'none') {
+                        mostrarRevistas();
+                    }
+                    
+                    console.log(`Clic en revista: ${this.textContent} (índice: ${index})`);
+                    
+                    // Opcional: cerrar el collapse después del clic
+                    const collapse = bootstrap.Collapse.getInstance(document.getElementById('listaRevistas'));
+                    if (collapse) {
+                        collapse.hide();
+                    }
+                });
+            });
 
             // Mostrar publicaciones por defecto al cargar la página
             mostrarPublicaciones();
