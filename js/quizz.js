@@ -3,6 +3,42 @@ let user = JSON.parse(localStorage.getItem("usuarios"))
 const form = document.querySelector('#quizForm')
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.question-step');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const submitButton = document.getElementById('submitButton');
+    let currentStep = 0;
+
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.classList.toggle('active', i === index);
+        });
+
+        prevButton.disabled = index === 0;
+        nextButton.classList.toggle('d-none', index === steps.length - 1);
+        submitButton.classList.toggle('d-none', index !== steps.length - 1);
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+
+    // Muestra la primera pregunta
+    showStep(currentStep);
+});
+
+/* captura de respuestas */
 function capturarRespuestas() {
     
     // Capturar respuestas de cada pregunta

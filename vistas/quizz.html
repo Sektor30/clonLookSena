@@ -109,18 +109,15 @@
           <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-footer">
-
           <a href="../vistas/dashboard.html"></a><button type="button" class="btn btn-primary" id="btn-final">continuar</button></a>
- 
         </div>
- 
       </div>
- 
-    </div>
+    </div> 
+
    
 
 
-    <main class="py-5">
+<!-- <main class="py-5">
         <div class="container mt-5  text-dark">
             <h2>quizz  FINAL</h2>
     
@@ -210,29 +207,120 @@
             </form>
         </div>
     
-    </main>
-    
-    
+    </main> -->
+<main class="py-5">
+    <div class="container mt-5 text-dark">
+        <h2>Quizz FINAL</h2>
         
-        <!-- Footer -->
-    
-        <footer>
-            <div class="container">
-              <div class="row text-white">
-                <div class="col-md-4">
-                  <div class="footer-section">
-                    <div class="footer-header">
-                      contacto
-                      <i class="bi bi-caret-down-fill"></i>
+        <form id="quizForm">
+            <!-- Contenedor de preguntas -->
+            <div id="quiz-steps">
+                <div class="form-group question-step active">
+                    <label for="question1">¿Qué es un "género cinematográfico"?</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question1" id="q1_option1" value="a">
+                        <label class="form-check-label" for="q1_option1">Una categoría que clasifica las películas según su presupuesto.</label>
                     </div>
-                    <ul class="footer-links">
-                      <li>nuestros canales de comunicación</li>
-                      <li>comentarios y sugerencias</li>
-                      <li>correo@correoemp.com</li>
-                    </ul>
-                  </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question1" id="q1_option2" value="b">
+                        <label class="form-check-label" for="q1_option2">Una categoría que clasifica las películas según su duración.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question1" id="q1_option3" value="c">
+                        <label class="form-check-label" for="q1_option3">Una categoría que agrupa películas según sus características comunes.</label>
+                    </div>
                 </div>
-                <div class="col-md-4">
+                
+                <div class="form-group question-step">
+                    <label for="question2">¿Quién es el encargado de dirigir a los actores y definir el estilo visual de una película?</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question2" id="q2_option1" value="a">
+                        <label class="form-check-label" for="q2_option1">El productor</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question2" id="q2_option2" value="b">
+                        <label class="form-check-label" for="q2_option2">El director</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question2" id="q2_option3" value="c">
+                        <label class="form-check-label" for="q2_option3">El guionista</label>
+                    </div>
+                </div>
+                
+                <div class="form-group question-step">
+                    <label for="question3">¿Qué es un "plano" en cine?</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question3" id="q3_option1" value="a">
+                        <label class="form-check-label" for="q3_option1">Una toma que muestra una imagen específica.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question3" id="q3_option2" value="b">
+                        <label class="form-check-label" for="q3_option2">Una escena completa de la película.</label>
+                    </div>
+                </div>
+                
+                <div class="form-group question-step">
+                    <label for="question4">¿Qué hace el "guionista" en una película?</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question4" id="q4_option1" value="a">
+                        <label class="form-check-label" for="q4_option1">Dirige a los actores durante el rodaje.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question4" id="q4_option2" value="b">
+                        <label class="form-check-label" for="q4_option2">Escribe el guion que describe los diálogos y las acciones de los personajes.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question4" id="q4_option3" value="c">
+                        <label class="form-check-label" for="q4_option3">Dirige a los actores durante el rodaje.</label>
+                    </div>
+                </div>
+                
+                <div class="form-group question-step">
+                    <label for="question5">¿Qué es una "escena" en una película?</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question5" id="q5_option1" value="a">
+                        <label class="form-check-label" for="q5_option1">Una parte de la película que ocurre en un solo lugar y tiempo.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question5" id="q5_option2" value="b">
+                        <label class="form-check-label" for="q5_option2">Un conjunto de imágenes en movimiento que constituyen la película.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question5" id="q5_option3" value="c">
+                        <label class="form-check-label" for="q5_option3">Una toma que muestra una imagen específica.</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegación -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-secondary" id="prevButton" disabled>Anterior</button>
+                <button type="button" class="btn btn-primary" id="nextButton">Siguiente</button>
+                <button type="submit" class="btn btn-success d-none" id="submitButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar</button>
+            </div>
+        </form>
+    </div>
+</main>
+    
+    <!-- Footer -->
+    
+  <footer>
+    <div class="container">
+      <div class="row text-white">
+        <div class="col-md-4">
+          <div class="footer-section">
+            <div class="footer-header">
+              contacto
+              <i class="bi bi-caret-down-fill"></i>
+            </div>
+            <ul class="footer-links">
+              <li>nuestros canales de comunicación</li>
+              <li>comentarios y sugerencias</li>
+              <li>correo@correoemp.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
                   <div class="footer-section">
                     <div class="footer-header">
                       sobre nosotros
